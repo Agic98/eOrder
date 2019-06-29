@@ -44,11 +44,11 @@ namespace eOrder.API.Controllers
             }
             else if(data.Count == 0)
             {
-                base.Get(searchObject).ToList();
+                data = base.Get(searchObject).ToList();
             }
             else
             {
-                base.Get(searchObject).ToList();
+                data = base.Get(searchObject).ToList();
             }
 
             return data;
