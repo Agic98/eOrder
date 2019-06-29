@@ -21,16 +21,16 @@ namespace eOrder.Mobile.ViewModels
         }
 
         #region Filters
-        double _ratingMin;
+        double _ratingMin = 0;
         public double RatingMin { get { return _ratingMin; } set { SetProperty(ref _ratingMin, value); }}
 
-        double _distanceKilometers;
+        double _distanceKilometers = 0;
         public double DistanceKilometers { get { return _distanceKilometers; } set { SetProperty(ref _distanceKilometers, value); } }
 
-        double _deliveryTimeMinutes;
+        double _deliveryTimeMinutes = 0;
         public double DeliveryTimeMinutesMax { get { return _deliveryTimeMinutes; } set { SetProperty(ref _deliveryTimeMinutes, value); } }
 
-        double _averagePriceMax;
+        double _averagePriceMax = 0;
         public double AveragePriceMax { get { return _averagePriceMax; } set { SetProperty(ref _averagePriceMax, value); } }
         #endregion
 
