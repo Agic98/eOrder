@@ -1,6 +1,8 @@
 ﻿using eOrder.CORE.Requests;
 using eOrder.Win.Helpers;
 using System;
+using System.Drawing;
+using System.IO;
 using System.Windows.Forms;
 
 namespace eOrder.Win.Forms.FormsRequest
@@ -9,6 +11,8 @@ namespace eOrder.Win.Forms.FormsRequest
     {
         APIService _organizationAPIService = new APIService("Organization");
         ComboBoxHelper comboBoxHelper = new ComboBoxHelper();
+        OrganizationRequest request = new OrganizationRequest();
+
         private int? _id;
 
         public frmOrganizationRequest(int? id = null)
@@ -19,13 +23,16 @@ namespace eOrder.Win.Forms.FormsRequest
 
         private async void btnSave_Click(object sender, EventArgs e)
         {
-            var request = ControlsHelper.MapControlsToProps(new OrganizationRequest(), gbxOrganizationData);
+            request = ControlsHelper.MapControlsToProps(new OrganizationRequest(), gbxOrganizationData);
             request.User = ControlsHelper.MapControlsToProps(new UserRequest(), gbxUserData);
 
             var result = await _organizationAPIService.Insert<OrganizationDTO>(request);
 
             if(result != null && result.Id != 0)
+            {
+                MessageBox.Show("Successfully saved your new account!");
                 Hide();
+            }
         }
 
         private async void frmOrganizationRequest_Load(object sender, EventArgs e)
@@ -48,6 +55,24 @@ namespace eOrder.Win.Forms.FormsRequest
                 var organizationDTO = await _organizationAPIService.GetById<OrganizationDTO>(_id);
                 ControlsHelper.MapPropsToControls(organizationDTO, gbxOrganizationData);
                 ControlsHelper.MapPropsToControls(organizationDTO.User, gbxUserData);
+            }
+        }
+
+        private void BtnNewImage_Click(object sender, EventArgs e)
+        {
+            openFileDialog1.Filter = "Image Files (JPG,PNG,GIF)|*.JPG;*.PNG;*.GIF";
+            var fileResult = openFileDialog1.ShowDialog();
+
+            if (fileResult == DialogResult.OK)
+            {
+                var fileName = openFileDialog1.FileName;
+                var file = File.ReadAllBytes(fileName);
+
+                request.ProfilePhoto = file;
+
+                Image image = Image.FromFile(fileName);
+                pbxProfilePhoto.Image = image;
+                pbxProfilePhoto.SizeMode = PictureBoxSizeMode.StretchImage;
             }
         }
     }
