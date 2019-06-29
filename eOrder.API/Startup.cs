@@ -98,7 +98,7 @@ namespace eOrder.API
             services.AddScoped<IWorkingHourService, WorkingHourService>();
 
             //Mock database for development purposes
-            DbInitializer.Seed(services.BuildServiceProvider());
+            //DbInitializer.Seed(services.BuildServiceProvider());
 
             //Resources
             services.AddLocalization(x => x.ResourcesPath = "Resources");
