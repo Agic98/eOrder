@@ -31,7 +31,7 @@ namespace eOrder.DAL.Services
 
         public IEnumerable<ProductDTO> GetByUserIdForRecommendation(int userId)
         {
-            var ratings = _dbContext.ProductRatings.Where(x => x.UserId == userId).ToList();
+            var ratings = _dbContext.ProductRatings.Where(x => x.UserId == userId && x.Rating > 3).ToList();
             var data = new List<ProductDTO>();
 
             foreach (var item in ratings)
