@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="eOrder.Mobile.Views.LoginPage"
+             xmlns:vm="clr-namespace:eOrder.Mobile.ViewModels">
+    <ContentPage.BindingContext>
+        <vm:LoginViewModel />
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout 
+            VerticalOptions="Center"
+            Padding="5">
+            <Label Text="Username"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+            <Entry Text="{Binding Username}"></Entry>
+            <Label Text="Password"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+            <Entry Text="{Binding Password}"></Entry>
+            <Button Text="Log In" Command="{Binding LoginCommand}"></Button>
+            <Button Text="Or Create a new account"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand"
+                TextColor="BlueViolet"
+                Margin="20"
+                BorderWidth="0"
+                Clicked="OpenRegisterPage"></Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

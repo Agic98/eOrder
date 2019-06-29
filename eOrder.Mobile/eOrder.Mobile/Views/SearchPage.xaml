@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="eOrder.Mobile.Views.SearchPage"
+             xmlns:vm="clr-namespace:eOrder.Mobile.ViewModels">
+    <ContentPage.BindingContext>
+        <vm:SearchViewModel />
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout
+                HorizontalOptions="CenterAndExpand">
+                <Button 
+                    HorizontalOptions="End" 
+                    Text="Search" 
+                    BackgroundColor="LightSeaGreen"
+                    TextColor="White"
+                    Command="{Binding InitCommand}"></Button>
+                
+                <Label Text="Enter product name"
+                HorizontalOptions="StartAndExpand" />
+                <Entry Text="{Binding ProductName}"></Entry>
+
+                <AbsoluteLayout>
+                    <Grid AbsoluteLayout.LayoutBounds="0,1,1,1" AbsoluteLayout.LayoutFlags="All">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <StackLayout
+                    HorizontalOptions="CenterAndExpand"
+                            HeightRequest="30" WidthRequest="300" Grid.Row="0" Grid.Column="0">
+                            <Label Text="Price from" />
+                            <Entry Text="{Binding PriceFrom}"></Entry>
+                        </StackLayout>
+                        <StackLayout
+                            HorizontalOptions="CenterAndExpand"
+                            HeightRequest="30" WidthRequest="300" Grid.Row="0" Grid.Column="1">
+                            <Label Text="Price to"/>
+                            <Entry Text="{Binding PriceTo}"></Entry>
+                        </StackLayout>
+                    </Grid>
+                </AbsoluteLayout>
+                
+            </StackLayout>
+
+
+            <StackLayout
+                Margin="40">
+            <BoxView HeightRequest="3" BackgroundColor="LightSeaGreen" />
+                <ListView 
+                ItemsSource="{Binding Products}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout 
+                                Padding="10">
+                                    <Image 
+                                        HeightRequest="100" 
+                                        WidthRequest="100"
+                                        HorizontalOptions="Start">
+                                        <Image.Source>
+                                            <UriImageSource Uri="{Binding PhotoUrl}" 
+			                                    CacheValidity="14" 
+			                                    CachingEnabled="false"/>
+                                        </Image.Source>
+                                    </Image>
+                                    <Label 
+                                        Text="{Binding Product.Name}" 
+                                        FontSize="13" />
+                                    <Label>
+                                        <Label.FormattedText>
+                                            <FormattedString>
+                                                <Span Text="Price: "/>
+                                                <Span FontAttributes="Bold" Text="{Binding Product.Price}" FontSize="16" TextColor="LightSeaGreen" />
+                                            </FormattedString>
+                                        </Label.FormattedText>
+                                    </Label>
+                                    <Button
+                                        Text="Add to cart"
+                                        HorizontalOptions="End"
+                                        BackgroundColor="LightSeaGreen"
+                                        TextColor="White"
+                                        BindingContext="{Binding Product.Id}"
+                                        Clicked="AddToCart">
+                                    </Button>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

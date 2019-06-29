@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="eOrder.Mobile.Views.CartPage"
+             xmlns:vm="clr-namespace:eOrder.Mobile.ViewModels">
+    <ContentPage.BindingContext>
+        <vm:CartViewModel></vm:CartViewModel>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout
+            HorizontalOptions="CenterAndExpand">
+            <ListView 
+                ItemsSource="{Binding CartOrders}"
+                VerticalOptions="Start"
+                HorizontalOptions="CenterAndExpand">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout
+                                HorizontalOptions="CenterAndExpand">
+                                <Label
+                                    HorizontalOptions="CenterAndExpand">
+                                    <Label.FormattedText>
+                                        <FormattedString>
+                                            <Span Text="Ordered from "/>
+                                            <Span FontAttributes="Bold" Text="{Binding Organization.Name}" FontSize="16" TextColor="LightSeaGreen" />
+                                            <Span Text=" :"/>
+                                        </FormattedString>
+                                    </Label.FormattedText>
+                                </Label>
+                                <StackLayout
+                                    HorizontalOptions="CenterAndExpand">
+                                    <Label
+                                    HorizontalOptions="CenterAndExpand">
+                                        <Label.FormattedText>
+                                            <FormattedString>
+                                                <Span Text="Ordered from "/>
+                                                <Span FontAttributes="Bold" Text="{Binding Total}" FontSize="16" TextColor="LightSeaGreen" />
+                                                <Span Text=" :"/>
+                                            </FormattedString>
+                                        </Label.FormattedText>
+                                    </Label>
+                                    <Button
+                                        Text="Order"
+                                        HorizontalOptions="CenterAndExpand"
+                                        BackgroundColor="LightSeaGreen"
+                                        TextColor="White"
+                                        BindingContext="{Binding Id}"
+                                        Clicked="InitiateOrder"
+                                    ></Button>
+                                    <Button
+                                        Text="Details"
+                                        HorizontalOptions="CenterAndExpand"
+                                        BackgroundColor="LightSeaGreen"
+                                        TextColor="White"
+                                        BindingContext="{Binding Id}"
+                                        Clicked="Details"
+                                    ></Button>
+                                </StackLayout>
+                                <BoxView HeightRequest="3" BackgroundColor="LightSeaGreen" />
+                                <!--<StackLayout
+                                    HorizontalOptions="CenterAndExpand">
+                                    <ListView 
+                                        ItemsSource="{Binding OrderDetailsList}"
+                                        VerticalOptions="Start">
+                                        <ListView.ItemTemplate>
+                                            <DataTemplate>
+                                                <ViewCell>
+                                                    <StackLayout>
+                                                        <Image 
+                                                            HeightRequest="150" 
+                                                            HorizontalOptions="StartAndExpand">
+                                                            <Image.Source>
+                                                                <UriImageSource Uri="{Binding ProductPhotoUrl}" 
+			                                                        CacheValidity="14" 
+			                                                        CachingEnabled="false"/>
+                                                            </Image.Source>
+                                                        </Image>
+                                                        <Label 
+                                                            Text="{Binding OrderDetail.Product.Name}" 
+                                                            FontSize="13" />
+                                                        <Label>
+                                                            <Label.FormattedText>
+                                                                <FormattedString>
+                                                                    <Span Text="Amount: "/>
+                                                                    <Span Text="{Binding OrderDetail.Amount}" FontSize="16" TextColor="LightSeaGreen" />
+                                                                </FormattedString>
+                                                            </Label.FormattedText>
+                                                        </Label>
+                                                        <Label>
+                                                            <Label.FormattedText>
+                                                                <FormattedString>
+                                                                    <Span Text="Total: "/>
+                                                                    <Span Text="{Binding OrderDetail.Total}" FontSize="16" TextColor="LightSeaGreen" />
+                                                                </FormattedString>
+                                                            </Label.FormattedText>
+                                                        </Label>
+                                                        <Button
+                                                            Text="Edit"
+                                                            HorizontalOptions="End"
+                                                            BackgroundColor="LightSeaGreen"
+                                                            TextColor="White"
+                                                            BindingContext="{Binding OrderDetail.Id}"
+                                                            Clicked="EditFromCart">
+                                                        </Button>
+                                                    </StackLayout>
+                                                </ViewCell>
+                                            </DataTemplate>
+                                        </ListView.ItemTemplate>
+                                    </ListView>
+                                    <BoxView HeightRequest="3" BackgroundColor="LightSeaGreen" />
+                                </StackLayout>-->
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

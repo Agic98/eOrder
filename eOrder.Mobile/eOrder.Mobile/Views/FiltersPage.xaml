@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="eOrder.Mobile.Views.FiltersPage"
+             xmlns:vm="clr-namespace:eOrder.Mobile.ViewModels">
+    <ContentPage.BindingContext>
+        <vm:OrganizationsViewModel />
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout 
+            Padding="5">
+
+            <Button 
+                Text="Save filters"
+                HorizontalOptions="CenterAndExpand"
+                TextColor="White"
+                BackgroundColor="LightSeaGreen"
+                Margin="20"
+                BorderWidth="0"
+                Clicked="SaveFiltersOpenOrganizationsPage"></Button>
+
+            <Label 
+                Text="Maximum delivery time in minutes: "
+                HorizontalOptions="CenterAndExpand" />
+            <Entry Text="{Binding DeliveryTimeMinutes}"></Entry>
+
+            <AbsoluteLayout>
+                <Grid AbsoluteLayout.LayoutBounds="0,1,1,1" AbsoluteLayout.LayoutFlags="All">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <StackLayout 
+                        HorizontalOptions="CenterAndExpand"
+                        HeightRequest="30" WidthRequest="300" Grid.Row="0" Grid.Column="0">
+                        <Label Text="Distance in kilometers: " />
+                        <Entry Text="{Binding DistanceKilometers}"></Entry>
+                    </StackLayout>
+                    <StackLayout
+                        HorizontalOptions="CenterAndExpand"
+                        HeightRequest="30" WidthRequest="300" Grid.Row="0" Grid.Column="1">
+                        <Label Text="Rating minimum: " />
+                        <Entry Text="{Binding RatingMin}"></Entry>
+                    </StackLayout>
+                </Grid>
+            </AbsoluteLayout>
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

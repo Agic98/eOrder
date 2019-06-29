@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="eOrder.Mobile.Views.OrganizationsPage"
+             xmlns:vm="clr-namespace:eOrder.Mobile.ViewModels">
+    <ContentPage.BindingContext>
+        <vm:OrganizationsViewModel></vm:OrganizationsViewModel>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout>
+            <Button
+                Text="Open filters"
+                HorizontalOptions="End"
+                BackgroundColor="LightSeaGreen"
+                TextColor="White"
+                Clicked="OpenFiltersForOrganizations"></Button>
+            <ListView 
+                ItemsSource="{Binding Organizations}"
+                RefreshCommand="{Binding InitCommand}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout>
+                                <BoxView HeightRequest="3" BackgroundColor="LightSeaGreen" />
+                                <StackLayout>
+                                    <!--<Image--> 
+                                    <!--Source="http://localhost:52135/api/Organization/ProfilePhoto/1" HeightRequest="150" HorizontalOptions="CenterAndExpand"></Image>-->
+                                    <!--<Image Source="{Binding ProfilePhoto}" HeightRequest="150" HorizontalOptions="CenterAndExpand"></Image>-->
+                                    <Image 
+                                        HeightRequest="150" 
+                                        HorizontalOptions="CenterAndExpand">
+                                        <Image.Source>
+                                            <UriImageSource Uri="{Binding ProfilePhoto}" 
+			                                    CacheValidity="14" 
+			                                    CachingEnabled="false"/>    
+                                        </Image.Source>
+                                    </Image>
+                                    <StackLayout
+                                        Padding="10">
+                                        <Label 
+                                            Text="{Binding Organization.ShortName}" 
+                                            TextColor="LightSeaGreen"
+                                            FontSize="13" />
+                                        <Label>
+                                            <Label.FormattedText>
+                                                <FormattedString>
+                                                    <Span Text="Distance from you: "/>
+                                                    <Span Text="{Binding Organization.DistanceFromCurrentUser}" TextColor="LightSeaGreen"/>
+                                                    <Span Text=" kilometers"/>
+                                                </FormattedString>
+                                            </Label.FormattedText>
+                                        </Label>
+                                        <Label>
+                                            <Label.FormattedText>
+                                                <FormattedString>
+                                                    <Span Text="Average rating: "/>
+                                                    <Span Text="{Binding Organization.AverageRating}" TextColor="LightSeaGreen"/>
+                                                    <Span Text=" ("/>
+                                                    <Span Text="{Binding Organization.TotalNumberOfRatings}" TextColor="LightSeaGreen"/>
+                                                    <Span Text=")"/>
+                                                </FormattedString>
+                                            </Label.FormattedText>
+                                        </Label>
+                                        <Button
+                                            Text="Details"
+                                            HorizontalOptions="End"
+                                            BackgroundColor="LightSeaGreen"
+                                            TextColor="White"
+                                            BindingContext="{Binding Organization.Id}"
+                                            Clicked="OpenOrganizationProfile"></Button>
+                                    </StackLayout>
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

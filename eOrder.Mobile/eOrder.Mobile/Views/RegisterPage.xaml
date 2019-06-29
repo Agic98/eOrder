@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="eOrder.Mobile.Views.RegisterPage"
+             xmlns:vm="clr-namespace:eOrder.Mobile.ViewModels">
+    <ContentPage.BindingContext>
+        <vm:RegisterViewModel />
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout 
+            VerticalOptions="Center"
+            Padding="5">
+            <Label 
+                Text="First name"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+            <Entry 
+                Text="{Binding FirstName}"></Entry>
+            <Label 
+                Text="Last name"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+            <Entry 
+                Text="{Binding LastName}"></Entry>
+            <Label 
+                Text="Username"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+            <Entry 
+                Text="{Binding Username}"></Entry>
+            <Label 
+                Text="Password"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+            <Entry 
+                Text="{Binding Password}"></Entry>
+            <Label 
+                Text="Password confirm"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+            <Entry 
+                Text="{Binding PasswordConfirm}"></Entry>
+            <Button Text="Log In" Command="{Binding RegisterCommand}"></Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

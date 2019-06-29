@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:vm="clr-namespace:eOrder.Mobile.ViewModels"
+             mc:Ignorable="d"
+             x:Class="eOrder.Mobile.Views.OrderDetailRequestPage">
+    <ContentPage.BindingContext>
+        <vm:OrderDetailRequestViewModel />
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        
+        <StackLayout 
+            VerticalOptions="Start"
+            Padding="20">
+            <StackLayout>
+                <Label Text="{Binding Product.Name}"
+                HorizontalOptions="StartAndExpand" />
+                <Label>
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="Price: "/>
+                            <Span FontAttributes="Bold" Text="{Binding Product.Price}" FontSize="16" TextColor="LightSeaGreen" />
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+            </StackLayout>
+            <Label Text="Amount"
+                HorizontalOptions="StartAndExpand" />
+            <Entry Text="{Binding Amount}"></Entry>
+            <Label Text="Additional description"
+                HorizontalOptions="StartAndExpand" />
+            <Entry Text="{Binding AdditionalDescription}"></Entry>
+
+            <Label
+                HorizontalOptions="CenterAndExpand">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Total: "/>
+                        <Span FontAttributes="Bold" Text="{Binding Total}" FontSize="16" TextColor="LightSeaGreen" />
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+
+            <Button Text="Save"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand"
+                TextColor="White"
+                BackgroundColor="LightSeaGreen"
+                Margin="20"
+                BorderWidth="0"
+                Clicked="SaveOrderDetail"></Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

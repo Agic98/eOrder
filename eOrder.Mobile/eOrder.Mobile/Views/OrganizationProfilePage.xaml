@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="eOrder.Mobile.Views.OrganizationProfilePage"
+             xmlns:vm="clr-namespace:eOrder.Mobile.ViewModels">
+    <ContentPage.BindingContext>
+        <vm:OrganizationViewModel></vm:OrganizationViewModel>
+    </ContentPage.BindingContext>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Back" Clicked="BackClicked"/>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout
+                HorizontalOptions="CenterAndExpand">
+                <Image 
+                    HeightRequest="150" 
+                    HorizontalOptions="CenterAndExpand">
+                    <Image.Source>
+                        <UriImageSource Uri="{Binding ProfilePhoto}" 
+			                CacheValidity="14" 
+			                CachingEnabled="false"/>
+                    </Image.Source>
+                </Image>
+            </StackLayout>
+            <StackLayout
+                Padding="10">
+                <StackLayout 
+                HorizontalOptions="StartAndExpand">
+                    <Label 
+                Text="{Binding Organization.ShortName}"
+                TextColor="LightSeaGreen"
+                HorizontalOptions="StartAndExpand"
+                HorizontalTextAlignment="Start"/>
+                    <Label>
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="Usually delivers in: "/>
+                                <Span Text="{Binding Organization.DeliveryTimeCalculated}" TextColor="LightSeaGreen"/>
+                                <Span Text=" minutes"/>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                </StackLayout>
+                <StackLayout
+                HorizontalOptions="StartAndExpand"
+                VerticalOptions="Start"
+                FlowDirection="LeftToRight"
+                >
+                    <Label>
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="Distance from you: "/>
+                                <Span Text="{Binding Organization.DistanceFromCurrentUser}" TextColor="LightSeaGreen"/>
+                                <Span Text=" kilometers"/>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                    <Label>
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="Rating: "/>
+                                <Span Text="{Binding Organization.AverageRating}" TextColor="LightSeaGreen"/>
+                                <Span Text=" ("/>
+                                <Span Text="{Binding Organization.TotalNumberOfRatings}" TextColor="LightSeaGreen"/>
+                                <Span Text=")"/>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                </StackLayout>
+            </StackLayout>
+            <BoxView HeightRequest="3" BackgroundColor="LightSeaGreen" />
+            <StackLayout
+                Padding="10"
+                >
+                <ListView 
+                ItemsSource="{Binding Products}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout
+                                    Padding="5">
+                                    <BoxView HeightRequest="3" BackgroundColor="LightSeaGreen" />
+
+                                    <Image 
+                                        HeightRequest="150" 
+                                        HorizontalOptions="StartAndExpand">
+                                        <Image.Source>
+                                            <UriImageSource Uri="{Binding PhotoUrl}" 
+			                                    CacheValidity="14" 
+			                                    CachingEnabled="false"/>    
+                                        </Image.Source>
+                                    </Image>
+                                    <Label 
+                                    Text="{Binding Product.Name}" 
+                                    FontSize="13" />
+                                    <Label>
+                                        <Label.FormattedText>
+                                            <FormattedString>
+                                                <Span Text="Price: "/>
+                                                <Span Text="{Binding Product.Price}" FontSize="16" TextColor="LightSeaGreen" />
+                                            </FormattedString>
+                                        </Label.FormattedText>
+                                    </Label>
+                                    <BoxView HeightRequest="1" BackgroundColor="LightSeaGreen" />
+                                    <Label 
+                                    Text="{Binding Product.Description}" 
+                                    HorizontalOptions="StartAndExpand" />
+                                    <Button
+                                    Text="Add to cart"
+                                    HorizontalOptions="End"
+                                    BackgroundColor="LightSeaGreen"
+                                    TextColor="White"
+                                    BindingContext="{Binding Product.Id}"
+                                    Clicked="AddToCart"
+                                    ></Button>
+                                    <BoxView HeightRequest="3" BackgroundColor="LightSeaGreen" />
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

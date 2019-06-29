@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="eOrder.Mobile.Views.OrderPage"
+             xmlns:vm="clr-namespace:eOrder.Mobile.ViewModels">
+    <ContentPage.BindingContext>
+        <vm:OrderViewModel></vm:OrderViewModel>
+    </ContentPage.BindingContext>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Back" Clicked="BackClicked"/>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout
+                HorizontalOptions="CenterAndExpand">
+            <ListView 
+                ItemsSource="{Binding Order.OrderDetailsList}"
+                VerticalOptions="Start">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout
+                                Padding="10">
+                                <Image 
+                                    HeightRequest="150" 
+                                    HorizontalOptions="StartAndExpand">
+                                    <Image.Source>
+                                        <UriImageSource Uri="{Binding ProductPhotoUrl}" 
+			                                            CacheValidity="14" 
+			                                            CachingEnabled="false"/>
+                                    </Image.Source>
+                                </Image>
+                                <Label 
+                                                        Text="{Binding OrderDetail.Product.Name}" 
+                                                        FontSize="13" />
+                                <Label>
+                                    <Label.FormattedText>
+                                        <FormattedString>
+                                            <Span Text="Amount: "/>
+                                            <Span Text="{Binding OrderDetail.Amount}" FontSize="16" TextColor="LightSeaGreen" />
+                                        </FormattedString>
+                                    </Label.FormattedText>
+                                </Label>
+                                <Label>
+                                    <Label.FormattedText>
+                                        <FormattedString>
+                                            <Span Text="Total: "/>
+                                            <Span Text="{Binding OrderDetail.Total}" FontSize="16" TextColor="LightSeaGreen" />
+                                        </FormattedString>
+                                    </Label.FormattedText>
+                                </Label>
+                                <Button
+                                    IsVisible="{Binding IsEditable}"
+                                                            Text="Edit"
+                                                            HorizontalOptions="End"
+                                                            BackgroundColor="LightSeaGreen"
+                                                            TextColor="White"
+                                                            BindingContext="{Binding OrderDetail.Id}"
+                                                            Clicked="EditFromCart">
+                                </Button>
+            <BoxView HeightRequest="3" BackgroundColor="LightSeaGreen" />
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
