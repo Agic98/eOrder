@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using eOrder.CORE.Models;
 using eOrder.CORE.Requests;
 using eOrder.DAL.Helpers;
@@ -35,7 +36,22 @@ namespace eOrder.API.Controllers
                 searchObject.OrganizationId = HttpContext.CurrentOrganization().Id;
             }
 
-            return base.Get(searchObject);
+            var data = new List<ProductDTO>();
+
+            if(searchObject == null && HttpContext.CurrentPerson() != null && HttpContext.CurrentDeliveryPerson() == null)
+            {
+                data = _productService.GetByUserIdForRecommendation(HttpContext.CurrentUser().Id).ToList();
+            }
+            else if(data.Count == 0)
+            {
+                base.Get(searchObject).ToList();
+            }
+            else
+            {
+                base.Get(searchObject).ToList();
+            }
+
+            return data;
         }
 
         public IEnumerable<ProductDTO> Recommend()
