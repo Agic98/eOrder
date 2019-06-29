@@ -20,9 +20,12 @@ namespace eOrder.API.Controllers
         ProductRequest
         >
     {
+        private IProductService _productService;
+
         public ProductController(IProductService ProductService) :
             base(ProductService)
         {
+            _productService = ProductService;
         }
 
         public override IEnumerable<ProductDTO> Get([FromQuery] ProductSearchRequest searchObject = null, [FromQuery] Pagination pagination = null)
@@ -31,7 +34,14 @@ namespace eOrder.API.Controllers
             {
                 searchObject.OrganizationId = HttpContext.CurrentOrganization().Id;
             }
-            return base.Get(searchObject, pagination);
+
+            return base.Get(searchObject);
+        }
+
+        public IEnumerable<ProductDTO> Recommend()
+        {
+            var currentUser = HttpContext.CurrentUser();
+            return _productService.GetByUserIdForRecommendation(currentUser.Id);
         }
 
         [HttpGet("Photo/{id}")]
