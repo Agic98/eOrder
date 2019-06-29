@@ -75,7 +75,7 @@ namespace eOrder.Mobile
                 var stringBuilder = new StringBuilder();
                 foreach (var error in errors)
                 {
-                    stringBuilder.AppendLine($"{error.Key}, ${string.Join(",", error.Value)}");
+                    stringBuilder.AppendLine($"{error.Key}, {string.Join(",", error.Value)}\n");
                 }
 
                 await Application.Current.MainPage.DisplayAlert("Greška", stringBuilder.ToString(), "OK");
@@ -99,7 +99,7 @@ namespace eOrder.Mobile
                 var stringBuilder = new StringBuilder();
                 foreach (var error in errors)
                 {
-                    stringBuilder.AppendLine($"{error.Key}, ${string.Join(",", error.Value)}");
+                    stringBuilder.AppendLine($"{error.Key}, {string.Join(",", error.Value)}\n");
                 }
 
                 await Application.Current.MainPage.DisplayAlert("Greška", stringBuilder.ToString(), "OK");

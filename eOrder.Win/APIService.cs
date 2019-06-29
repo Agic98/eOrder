@@ -65,7 +65,7 @@ namespace eOrder.Win
                 var stringBuilder = new StringBuilder();
                 foreach (var error in errors)
                 {
-                    stringBuilder.AppendLine($"{error.Key}, ${string.Join(",", error.Value)}");
+                    stringBuilder.AppendLine($"{error.Key}, {string.Join(",", error.Value)}\n");
                 }
 
                 MessageBox.Show(stringBuilder.ToString(), "Greška", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -88,7 +88,7 @@ namespace eOrder.Win
                 var stringBuilder = new StringBuilder();
                 foreach (var error in errors)
                 {
-                    stringBuilder.AppendLine($"{error.Key}, ${string.Join(",", error.Value)}");
+                    stringBuilder.AppendLine($"{error.Key}, {string.Join(",", error.Value)}\n");
                 }
 
                 MessageBox.Show(stringBuilder.ToString(), "Greška", MessageBoxButtons.OK, MessageBoxIcon.Error);
