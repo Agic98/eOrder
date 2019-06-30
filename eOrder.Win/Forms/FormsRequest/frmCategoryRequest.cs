@@ -32,6 +32,7 @@ namespace eOrder.Win.Forms.FormsRequest
                     await _categoryAPIService.Insert<CategoryDTO>(request);
                 }
 
+                MessageBox.Show("Successfully saved!");
                 Hide();
             }
         }

@@ -33,6 +33,7 @@ namespace eOrder.Win.Forms.FormsRequest
                     await _cityAPIService.Insert<CityDTO>(request);
                 }
 
+                MessageBox.Show("Successfully saved!");
                 Hide();
             }
         }
