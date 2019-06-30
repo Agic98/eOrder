@@ -28,16 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.gbxVehicleTypeData = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtName = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.pbxIconPreview = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.pbxIconPreview = new System.Windows.Forms.PictureBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtName = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.gbxVehicleTypeData.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxIconPreview)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // gbxVehicleTypeData
@@ -54,38 +57,15 @@
             this.gbxVehicleTypeData.TabIndex = 0;
             this.gbxVehicleTypeData.TabStop = false;
             // 
-            // label1
+            // btnSave
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(26, 26);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Name";
-            // 
-            // txtName
-            // 
-            this.txtName.Location = new System.Drawing.Point(29, 43);
-            this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(207, 20);
-            this.txtName.TabIndex = 1;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(26, 85);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(28, 13);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Icon";
-            // 
-            // pbxIconPreview
-            // 
-            this.pbxIconPreview.Location = new System.Drawing.Point(29, 102);
-            this.pbxIconPreview.Name = "pbxIconPreview";
-            this.pbxIconPreview.Size = new System.Drawing.Size(125, 125);
-            this.pbxIconPreview.TabIndex = 3;
-            this.pbxIconPreview.TabStop = false;
+            this.btnSave.Location = new System.Drawing.Point(161, 276);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(75, 23);
+            this.btnSave.TabIndex = 5;
+            this.btnSave.Text = "Save";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // button1
             // 
@@ -97,19 +77,46 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // btnSave
+            // pbxIconPreview
             // 
-            this.btnSave.Location = new System.Drawing.Point(161, 276);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(75, 23);
-            this.btnSave.TabIndex = 5;
-            this.btnSave.Text = "Save";
-            this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            this.pbxIconPreview.Location = new System.Drawing.Point(29, 102);
+            this.pbxIconPreview.Name = "pbxIconPreview";
+            this.pbxIconPreview.Size = new System.Drawing.Size(125, 125);
+            this.pbxIconPreview.TabIndex = 3;
+            this.pbxIconPreview.TabStop = false;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(26, 85);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(28, 13);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Icon";
+            // 
+            // txtName
+            // 
+            this.txtName.Location = new System.Drawing.Point(29, 43);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(207, 20);
+            this.txtName.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(26, 26);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Name";
             // 
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
             // 
             // frmVehicleTypeRequest
             // 
@@ -124,6 +131,7 @@
             this.gbxVehicleTypeData.ResumeLayout(false);
             this.gbxVehicleTypeData.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxIconPreview)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -138,5 +146,6 @@
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

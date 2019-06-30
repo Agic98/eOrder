@@ -1,5 +1,6 @@
 ﻿using eOrder.CORE.Requests;
 using eOrder.Win.Helpers;
+using eOrder.Win.Properties;
 using System;
 using System.Drawing;
 using System.IO;
@@ -43,28 +44,31 @@ namespace eOrder.Win.Forms.FormsRequest
 
         private async void BtnSave_Click(object sender, EventArgs e)
         {
-            request = ControlsHelper.MapControlsToProps(request, gbxProductData);
-            try
+            if (ValidateChildren())
             {
-                request.Price = double.Parse(txtPrice.Text);
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Value for price is not valid");
-                return;
-            }
+                request = ControlsHelper.MapControlsToProps(request, gbxProductData);
+                try
+                {
+                    request.Price = double.Parse(txtPrice.Text);
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Value for price is not valid");
+                    return;
+                }
 
-            if (_id.HasValue)
-            {
-                await _productAPIService.Update<ProductDTO>(_id.Value, request);
-            }
-            else
-            {
-                await _productAPIService.Insert<ProductDTO>(request);
-            }
+                if (_id.HasValue)
+                {
+                    await _productAPIService.Update<ProductDTO>(_id.Value, request);
+                }
+                else
+                {
+                    await _productAPIService.Insert<ProductDTO>(request);
+                }
 
-            this.Hide();
-            MessageBox.Show("Successfully saved!");
+                MessageBox.Show("Successfully saved!");
+                Hide();
+            }
         }
 
         private void BtnNewImage_Click(object sender, EventArgs e)
@@ -82,6 +86,45 @@ namespace eOrder.Win.Forms.FormsRequest
                 Image image = Image.FromFile(fileName);
                 pbxPhoto.Image = image;
                 pbxPhoto.SizeMode = PictureBoxSizeMode.StretchImage;
+            }
+        }
+
+        private void TxtName_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtName.Text))
+            {
+                e.Cancel = true;
+                errorProvider1.SetError(txtName, Resources.Validation_ReqField);
+            }
+            else
+            {
+                errorProvider1.SetError(txtName, null);
+            }
+        }
+
+        private void CbxCategoryId_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if (cbxCategoryId.SelectedIndex == -1)
+            {
+                e.Cancel = true;
+                errorProvider1.SetError(cbxCategoryId, Resources.Validation_ReqField);
+            }
+            else
+            {
+                errorProvider1.SetError(cbxCategoryId, null);
+            }
+        }
+
+        private void TxtPrice_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtPrice.Text))
+            {
+                e.Cancel = true;
+                errorProvider1.SetError(txtPrice, Resources.Validation_ReqField);
+            }
+            else
+            {
+                errorProvider1.SetError(txtPrice, null);
             }
         }
     }

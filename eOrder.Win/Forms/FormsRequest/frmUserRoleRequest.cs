@@ -1,5 +1,6 @@
 ﻿using eOrder.CORE.Requests;
 using eOrder.Win.Helpers;
+using eOrder.Win.Properties;
 using System;
 using System.Windows.Forms;
 
@@ -48,6 +49,32 @@ namespace eOrder.Win.Forms.FormsRequest
                 var model = await _userRoleAPIService.GetById<UserRoleDTO>(_id.Value);
                 ControlsHelper.MapPropsToControls(model, gbxUserRoleData);
             }
+        }
+
+        private void CbxUserId_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            //if (cbxUserId.SelectedIndex == -1)
+            //{
+            //    e.Cancel = true;
+            //    errorProvider1.SetError(cbxUserId, Resources.Validation_ReqField);
+            //}
+            //else
+            //{
+            //    errorProvider1.SetError(cbxUserId, null);
+            //}
+        }
+
+        private void CbxRoleId_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            //if (cbxRoleId.SelectedIndex == -1)
+            //{
+            //    e.Cancel = true;
+            //    errorProvider1.SetError(cbxRoleId, Resources.Validation_ReqField);
+            //}
+            //else
+            //{
+            //    errorProvider1.SetError(cbxRoleId, null);
+            //}
         }
     }
 }

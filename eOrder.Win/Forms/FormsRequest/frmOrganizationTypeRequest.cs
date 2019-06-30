@@ -1,5 +1,6 @@
 ﻿using eOrder.CORE.Requests;
 using eOrder.Win.Helpers;
+using eOrder.Win.Properties;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -34,23 +35,40 @@ namespace eOrder.Win.Forms.FormsRequest
 
         private async void btnSave_Click(object sender, EventArgs e)
         {
-            var request = ControlsHelper.MapControlsToProps(new OrganizationTypeRequest(), gbxOrganizationTypeData);
-
-            if (_id.HasValue)
+            if (ValidateChildren())
             {
-                await _organizationTypeAPIService.Update<OrganizationTypeDTO>(_id.Value, request);
-            }
-            else
-            {
-                await _organizationTypeAPIService.Insert<OrganizationTypeDTO>(request);
-            }
+                var request = ControlsHelper.MapControlsToProps(new OrganizationTypeRequest(), gbxOrganizationTypeData);
 
-            Hide();
+                if (_id.HasValue)
+                {
+                    await _organizationTypeAPIService.Update<OrganizationTypeDTO>(_id.Value, request);
+                }
+                else
+                {
+                    await _organizationTypeAPIService.Insert<OrganizationTypeDTO>(request);
+                }
+
+                MessageBox.Show("Successfully saved!");
+                Hide();
+            }
         }
 
         private void gbxOrganizationTypeData_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void TxtName_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtName.Text))
+            {
+                e.Cancel = true;
+                errorProvider1.SetError(txtName, Resources.Validation_ReqField);
+            }
+            else
+            {
+                errorProvider1.SetError(txtName, null);
+            }
         }
     }
 }
