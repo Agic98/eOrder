@@ -64,7 +64,7 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(535, 488);
+            this.btnSave.Location = new System.Drawing.Point(535, 396);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
             this.btnSave.TabIndex = 8;
@@ -74,10 +74,7 @@
             // 
             // gbxUserData
             // 
-            this.gbxUserData.Controls.Add(this.btnNewImage);
-            this.gbxUserData.Controls.Add(this.pbxProfilePhoto);
             this.gbxUserData.Controls.Add(this.cbxCityId);
-            this.gbxUserData.Controls.Add(this.label12);
             this.gbxUserData.Controls.Add(this.label7);
             this.gbxUserData.Controls.Add(this.txtEmail);
             this.gbxUserData.Controls.Add(this.label4);
@@ -93,7 +90,7 @@
             this.gbxUserData.Controls.Add(this.label1);
             this.gbxUserData.Location = new System.Drawing.Point(13, 13);
             this.gbxUserData.Name = "gbxUserData";
-            this.gbxUserData.Size = new System.Drawing.Size(288, 498);
+            this.gbxUserData.Size = new System.Drawing.Size(288, 367);
             this.gbxUserData.TabIndex = 9;
             this.gbxUserData.TabStop = false;
             // 
@@ -212,8 +209,11 @@
             // 
             // gbxOrganizationData
             // 
+            this.gbxOrganizationData.Controls.Add(this.btnNewImage);
             this.gbxOrganizationData.Controls.Add(this.label11);
+            this.gbxOrganizationData.Controls.Add(this.pbxProfilePhoto);
             this.gbxOrganizationData.Controls.Add(this.cbxCurrencyId);
+            this.gbxOrganizationData.Controls.Add(this.label12);
             this.gbxOrganizationData.Controls.Add(this.cbxOrganizationTypeId);
             this.gbxOrganizationData.Controls.Add(this.txtShortName);
             this.gbxOrganizationData.Controls.Add(this.label10);
@@ -222,7 +222,7 @@
             this.gbxOrganizationData.Controls.Add(this.txtName);
             this.gbxOrganizationData.Location = new System.Drawing.Point(322, 13);
             this.gbxOrganizationData.Name = "gbxOrganizationData";
-            this.gbxOrganizationData.Size = new System.Drawing.Size(288, 230);
+            this.gbxOrganizationData.Size = new System.Drawing.Size(288, 367);
             this.gbxOrganizationData.TabIndex = 10;
             this.gbxOrganizationData.TabStop = false;
             // 
@@ -294,7 +294,7 @@
             // 
             // btnNewImage
             // 
-            this.btnNewImage.Location = new System.Drawing.Point(130, 456);
+            this.btnNewImage.Location = new System.Drawing.Point(131, 328);
             this.btnNewImage.Name = "btnNewImage";
             this.btnNewImage.Size = new System.Drawing.Size(75, 23);
             this.btnNewImage.TabIndex = 22;
@@ -305,7 +305,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(26, 363);
+            this.label12.Location = new System.Drawing.Point(27, 235);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(40, 13);
             this.label12.TabIndex = 21;
@@ -317,7 +317,7 @@
             // 
             // pbxProfilePhoto
             // 
-            this.pbxProfilePhoto.Location = new System.Drawing.Point(24, 379);
+            this.pbxProfilePhoto.Location = new System.Drawing.Point(25, 251);
             this.pbxProfilePhoto.Name = "pbxProfilePhoto";
             this.pbxProfilePhoto.Size = new System.Drawing.Size(100, 100);
             this.pbxProfilePhoto.TabIndex = 14;
@@ -327,7 +327,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(631, 523);
+            this.ClientSize = new System.Drawing.Size(631, 431);
             this.Controls.Add(this.gbxOrganizationData);
             this.Controls.Add(this.gbxUserData);
             this.Controls.Add(this.btnSave);

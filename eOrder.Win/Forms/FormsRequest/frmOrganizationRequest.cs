@@ -11,7 +11,7 @@ namespace eOrder.Win.Forms.FormsRequest
     {
         APIService _organizationAPIService = new APIService("Organization");
         ComboBoxHelper comboBoxHelper = new ComboBoxHelper();
-        OrganizationRequest request = new OrganizationRequest();
+        OrganizationRequest request = new OrganizationRequest { User = new UserRequest() };
 
         private int? _id;
 
@@ -23,8 +23,8 @@ namespace eOrder.Win.Forms.FormsRequest
 
         private async void btnSave_Click(object sender, EventArgs e)
         {
-            request = ControlsHelper.MapControlsToProps(new OrganizationRequest(), gbxOrganizationData);
-            request.User = ControlsHelper.MapControlsToProps(new UserRequest(), gbxUserData);
+            request = ControlsHelper.MapControlsToProps(request, gbxOrganizationData);
+            request.User = ControlsHelper.MapControlsToProps(request.User, gbxUserData);
 
             var result = await _organizationAPIService.Insert<OrganizationDTO>(request);
 
