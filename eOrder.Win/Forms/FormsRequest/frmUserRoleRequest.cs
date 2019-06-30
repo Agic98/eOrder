@@ -1,6 +1,5 @@
 ﻿using eOrder.CORE.Requests;
 using eOrder.Win.Helpers;
-using eOrder.Win.Properties;
 using System;
 using System.Windows.Forms;
 
@@ -31,6 +30,7 @@ namespace eOrder.Win.Forms.FormsRequest
                 await _userRoleAPIService.Insert<UserRoleDTO>(request);
             }
 
+            MessageBox.Show("Successfully saved!");
             Hide();
         }
 
