@@ -3,3 +3,22 @@
 ################################################################################
 
 /.vs
+/eOrder.API/bin/Debug/netcoreapp2.2
+/eOrder.API/obj/Debug/netcoreapp2.2
+/eOrder.API/obj
+/eOrder.CORE/bin/Debug/netstandard2.0
+/eOrder.CORE/obj/Debug/netstandard2.0
+/eOrder.CORE/obj
+/eOrder.DAL/bin/Debug/netcoreapp2.1
+/eOrder.DAL/obj/Debug/netcoreapp2.1
+/eOrder.DAL/obj
+/eOrder.Mobile/eOrder.Mobile/bin/Debug/netstandard2.0
+/eOrder.Mobile/eOrder.Mobile/obj
+/eOrder.Mobile/eOrder.Mobile.Android/bin/Debug
+/eOrder.Mobile/eOrder.Mobile.Android/obj
+/eOrder.Mobile/eOrder.Mobile.iOS/obj
+/eOrder.Mobile/eOrder.Mobile.UWP/bin/x86/Debug
+/eOrder.Mobile/eOrder.Mobile.UWP/obj/x86/Debug
+/eOrder.Win/bin/Debug
+/eOrder.Win/obj/Debug
+/packages
