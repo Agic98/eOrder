@@ -16,7 +16,11 @@ namespace eOrder.Mobile.ViewModels
         private readonly APIService _orderService = new APIService("OrderClient");
         private readonly APIService _productService = new APIService("Product");
 
+        bool _isFinishedLoading;
+        public bool IsFinishedLoading { get { return _isFinishedLoading; } set { SetProperty(ref _isFinishedLoading, value); } }
+
         public ICommand InitCommand { get; set; }
+
 
         public OrderDetailRequestViewModel() { }
 
@@ -123,6 +127,8 @@ namespace eOrder.Mobile.ViewModels
 
         public async Task Init()
         {
+            IsFinishedLoading = false;
+
             if (OrderDetailId != 0)
             {
                 //For editing exsisting item
@@ -147,6 +153,8 @@ namespace eOrder.Mobile.ViewModels
                     Product = productDTO;
                 }
             }
+
+            IsFinishedLoading = true;
         }
 
         public async Task<bool> Save()

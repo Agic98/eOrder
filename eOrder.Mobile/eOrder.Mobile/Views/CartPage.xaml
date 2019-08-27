@@ -12,11 +12,19 @@
     <ContentPage.Content>
         <StackLayout
             HorizontalOptions="CenterAndExpand">
+
+            <Label
+                HorizontalOptions="CenterAndExpand"
+                Text="There are no items!"
+                IsVisible="{Binding IsEmpty}">
+            </Label>
+
             <ListView 
                 ItemsSource="{Binding CartOrders}"
                 VerticalOptions="Start"
                 HorizontalOptions="CenterAndExpand">
-                <ListView.ItemTemplate>
+                <ListView.ItemTemplate
+                    HorizontalOptions="CenterAndExpand">
                     <DataTemplate>
                         <ViewCell>
                             <StackLayout
@@ -37,7 +45,7 @@
                                     HorizontalOptions="CenterAndExpand">
                                         <Label.FormattedText>
                                             <FormattedString>
-                                                <Span Text="Ordered from "/>
+                                                <Span Text="Total "/>
                                                 <Span FontAttributes="Bold" Text="{Binding Total}" FontSize="16" TextColor="LightSeaGreen" />
                                                 <Span Text=" :"/>
                                             </FormattedString>

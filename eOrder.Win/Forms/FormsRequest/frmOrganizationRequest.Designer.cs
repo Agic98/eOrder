@@ -45,26 +45,21 @@
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.gbxOrganizationData = new System.Windows.Forms.GroupBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.cbxCurrencyId = new System.Windows.Forms.ComboBox();
             this.cbxOrganizationTypeId = new System.Windows.Forms.ComboBox();
             this.txtShortName = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
-            this.btnNewImage = new System.Windows.Forms.Button();
-            this.label12 = new System.Windows.Forms.Label();
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.pbxProfilePhoto = new System.Windows.Forms.PictureBox();
+            this.cbxCurrencyId = new System.Windows.Forms.ComboBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.gbxUserData.SuspendLayout();
             this.gbxOrganizationData.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxProfilePhoto)).BeginInit();
             this.SuspendLayout();
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(535, 396);
+            this.btnSave.Location = new System.Drawing.Point(535, 366);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
             this.btnSave.TabIndex = 8;
@@ -90,7 +85,7 @@
             this.gbxUserData.Controls.Add(this.label1);
             this.gbxUserData.Location = new System.Drawing.Point(13, 13);
             this.gbxUserData.Name = "gbxUserData";
-            this.gbxUserData.Size = new System.Drawing.Size(288, 367);
+            this.gbxUserData.Size = new System.Drawing.Size(288, 376);
             this.gbxUserData.TabIndex = 9;
             this.gbxUserData.TabStop = false;
             // 
@@ -209,11 +204,8 @@
             // 
             // gbxOrganizationData
             // 
-            this.gbxOrganizationData.Controls.Add(this.btnNewImage);
             this.gbxOrganizationData.Controls.Add(this.label11);
-            this.gbxOrganizationData.Controls.Add(this.pbxProfilePhoto);
             this.gbxOrganizationData.Controls.Add(this.cbxCurrencyId);
-            this.gbxOrganizationData.Controls.Add(this.label12);
             this.gbxOrganizationData.Controls.Add(this.cbxOrganizationTypeId);
             this.gbxOrganizationData.Controls.Add(this.txtShortName);
             this.gbxOrganizationData.Controls.Add(this.label10);
@@ -222,26 +214,9 @@
             this.gbxOrganizationData.Controls.Add(this.txtName);
             this.gbxOrganizationData.Location = new System.Drawing.Point(322, 13);
             this.gbxOrganizationData.Name = "gbxOrganizationData";
-            this.gbxOrganizationData.Size = new System.Drawing.Size(288, 367);
+            this.gbxOrganizationData.Size = new System.Drawing.Size(288, 230);
             this.gbxOrganizationData.TabIndex = 10;
             this.gbxOrganizationData.TabStop = false;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(24, 167);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(49, 13);
-            this.label11.TabIndex = 19;
-            this.label11.Text = "Currency";
-            // 
-            // cbxCurrencyId
-            // 
-            this.cbxCurrencyId.FormattingEnabled = true;
-            this.cbxCurrencyId.Location = new System.Drawing.Point(25, 184);
-            this.cbxCurrencyId.Name = "cbxCurrencyId";
-            this.cbxCurrencyId.Size = new System.Drawing.Size(237, 21);
-            this.cbxCurrencyId.TabIndex = 18;
             // 
             // cbxOrganizationTypeId
             // 
@@ -292,42 +267,28 @@
             this.txtName.Size = new System.Drawing.Size(237, 20);
             this.txtName.TabIndex = 15;
             // 
-            // btnNewImage
+            // cbxCurrencyId
             // 
-            this.btnNewImage.Location = new System.Drawing.Point(131, 328);
-            this.btnNewImage.Name = "btnNewImage";
-            this.btnNewImage.Size = new System.Drawing.Size(75, 23);
-            this.btnNewImage.TabIndex = 22;
-            this.btnNewImage.Text = "New image";
-            this.btnNewImage.UseVisualStyleBackColor = true;
-            this.btnNewImage.Click += new System.EventHandler(this.BtnNewImage_Click);
+            this.cbxCurrencyId.FormattingEnabled = true;
+            this.cbxCurrencyId.Location = new System.Drawing.Point(25, 184);
+            this.cbxCurrencyId.Name = "cbxCurrencyId";
+            this.cbxCurrencyId.Size = new System.Drawing.Size(237, 21);
+            this.cbxCurrencyId.TabIndex = 18;
             // 
-            // label12
+            // label11
             // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(27, 235);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(40, 13);
-            this.label12.TabIndex = 21;
-            this.label12.Text = "Picture";
-            // 
-            // openFileDialog1
-            // 
-            this.openFileDialog1.FileName = "openFileDialog1";
-            // 
-            // pbxProfilePhoto
-            // 
-            this.pbxProfilePhoto.Location = new System.Drawing.Point(25, 251);
-            this.pbxProfilePhoto.Name = "pbxProfilePhoto";
-            this.pbxProfilePhoto.Size = new System.Drawing.Size(100, 100);
-            this.pbxProfilePhoto.TabIndex = 14;
-            this.pbxProfilePhoto.TabStop = false;
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(24, 167);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(49, 13);
+            this.label11.TabIndex = 19;
+            this.label11.Text = "Currency";
             // 
             // frmOrganizationRequest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(631, 431);
+            this.ClientSize = new System.Drawing.Size(631, 405);
             this.Controls.Add(this.gbxOrganizationData);
             this.Controls.Add(this.gbxUserData);
             this.Controls.Add(this.btnSave);
@@ -339,7 +300,6 @@
             this.gbxUserData.PerformLayout();
             this.gbxOrganizationData.ResumeLayout(false);
             this.gbxOrganizationData.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxProfilePhoto)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -370,9 +330,5 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.ComboBox cbxCurrencyId;
-        private System.Windows.Forms.Button btnNewImage;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.OpenFileDialog openFileDialog1;
-        private System.Windows.Forms.PictureBox pbxProfilePhoto;
     }
 }

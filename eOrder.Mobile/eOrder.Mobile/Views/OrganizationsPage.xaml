@@ -11,12 +11,14 @@
     </ContentPage.BindingContext>
     <ContentPage.Content>
         <StackLayout>
+
             <Button
                 Text="Open filters"
                 HorizontalOptions="End"
                 BackgroundColor="LightSeaGreen"
                 TextColor="White"
-                Clicked="OpenFiltersForOrganizations"></Button>
+                Clicked="OpenFiltersForOrganizations">
+            </Button>
             <ListView 
                 ItemsSource="{Binding Organizations}"
                 RefreshCommand="{Binding InitCommand}">

@@ -1,6 +1,5 @@
 ﻿using eOrder.CORE.Models;
 using eOrder.CORE.Requests;
-using System.Collections.Generic;
 
 namespace eOrder.DAL.IServices
 {
@@ -14,6 +13,5 @@ namespace eOrder.DAL.IServices
             >
     {
         double GetAverageProductPriceByOrganizationId(int organizationId);
-        IEnumerable<ProductDTO> GetByUserIdForRecommendation(int userId);
     }
 }

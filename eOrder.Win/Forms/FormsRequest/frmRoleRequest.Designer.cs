@@ -28,16 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.gbxRoleData = new System.Windows.Forms.GroupBox();
             this.btnSave = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.txtDescription = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
-            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.gbxRoleData.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // gbxRoleData
@@ -94,11 +91,6 @@
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(252, 20);
             this.txtName.TabIndex = 0;
-            this.txtName.Validating += new System.ComponentModel.CancelEventHandler(this.TxtName_Validating);
-            // 
-            // errorProvider1
-            // 
-            this.errorProvider1.ContainerControl = this;
             // 
             // frmRoleRequest
             // 
@@ -112,7 +104,6 @@
             this.Load += new System.EventHandler(this.frmRoleRequest_Load);
             this.gbxRoleData.ResumeLayout(false);
             this.gbxRoleData.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -125,6 +116,5 @@
         private System.Windows.Forms.TextBox txtDescription;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtName;
-        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

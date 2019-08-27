@@ -43,14 +43,17 @@
                 </Label.FormattedText>
             </Label>
 
-            <Button Text="Save"
+            <Button 
+                Text="Save"
+                IsEnabled="{Binding IsFinishedLoading}"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand"
                 TextColor="White"
                 BackgroundColor="LightSeaGreen"
                 Margin="20"
                 BorderWidth="0"
-                Clicked="SaveOrderDetail"></Button>
+                Clicked="SaveOrderDetail">
+            </Button>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

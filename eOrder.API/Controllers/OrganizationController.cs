@@ -52,7 +52,7 @@ namespace eOrder.API.Controllers
             #endregion
 
             #region user rating
-            organization.AverageRating = Math.Round(_userRatingService.GetByUserId(organization.UserId), 1);
+            organization.AverageRating = Math.Round(_userRatingService.GetByUserId(organization.Id), 1);
             organization.TotalNumberOfRatings = _userRatingService.TotalNumberOfRatingByUserId(organization.Id);
             #endregion
 
@@ -84,7 +84,7 @@ namespace eOrder.API.Controllers
                 #endregion
 
                 #region user rating
-                organization.AverageRating = Math.Round(_userRatingService.GetByUserId(organization.UserId), 1);
+                organization.AverageRating = Math.Round(_userRatingService.GetByUserId(organization.Id), 1);
                 organization.TotalNumberOfRatings = _userRatingService.TotalNumberOfRatingByUserId(organization.Id);
                 #endregion
 

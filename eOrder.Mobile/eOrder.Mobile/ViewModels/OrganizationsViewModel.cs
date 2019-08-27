@@ -12,6 +12,11 @@ namespace eOrder.Mobile.ViewModels
     {
         APIService _organizationsService = new APIService("Organization");
         public ObservableCollection<OrganizationModel> Organizations { get; set; } = new ObservableCollection<OrganizationModel>();
+
+        bool _isFinishedLoading;
+        public bool IsFinishedLoading { get { return _isFinishedLoading; } set { SetProperty(ref _isFinishedLoading, value); } }
+
+
         public ICommand InitCommand { get; set; }
 
 
@@ -21,16 +26,16 @@ namespace eOrder.Mobile.ViewModels
         }
 
         #region Filters
-        double _ratingMin = 0;
+        double _ratingMin;
         public double RatingMin { get { return _ratingMin; } set { SetProperty(ref _ratingMin, value); }}
 
-        double _distanceKilometers = 0;
+        double _distanceKilometers;
         public double DistanceKilometers { get { return _distanceKilometers; } set { SetProperty(ref _distanceKilometers, value); } }
 
-        double _deliveryTimeMinutes = 0;
+        double _deliveryTimeMinutes;
         public double DeliveryTimeMinutesMax { get { return _deliveryTimeMinutes; } set { SetProperty(ref _deliveryTimeMinutes, value); } }
 
-        double _averagePriceMax = 0;
+        double _averagePriceMax;
         public double AveragePriceMax { get { return _averagePriceMax; } set { SetProperty(ref _averagePriceMax, value); } }
         #endregion
 
@@ -41,6 +46,8 @@ namespace eOrder.Mobile.ViewModels
 
         public async Task Init()
         {
+            IsFinishedLoading = false;
+
             var data = await _organizationsService.Get<IEnumerable<OrganizationDTO>>(
                 new OrganizationSearchRequest {
                     RatingMin = RatingMin,
@@ -59,6 +66,8 @@ namespace eOrder.Mobile.ViewModels
                     ProfilePhoto = $"{APIService._apiUrl}/Organization/ProfilePhoto/{item.Id}"
                 });
             }
+
+            IsFinishedLoading = true;
         }
     }
 }

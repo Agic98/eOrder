@@ -28,16 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.gbxUserRoleData = new System.Windows.Forms.GroupBox();
-            this.cbxRoleId = new System.Windows.Forms.ComboBox();
-            this.cbxUserId = new System.Windows.Forms.ComboBox();
-            this.btnSave = new System.Windows.Forms.Button();
-            this.Description = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.Description = new System.Windows.Forms.Label();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.cbxUserId = new System.Windows.Forms.ComboBox();
+            this.cbxRoleId = new System.Windows.Forms.ComboBox();
             this.gbxUserRoleData.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // gbxUserRoleData
@@ -53,23 +50,23 @@
             this.gbxUserRoleData.TabIndex = 0;
             this.gbxUserRoleData.TabStop = false;
             // 
-            // cbxRoleId
+            // label1
             // 
-            this.cbxRoleId.FormattingEnabled = true;
-            this.cbxRoleId.Location = new System.Drawing.Point(24, 100);
-            this.cbxRoleId.Name = "cbxRoleId";
-            this.cbxRoleId.Size = new System.Drawing.Size(256, 21);
-            this.cbxRoleId.TabIndex = 6;
-            this.cbxRoleId.Validating += new System.ComponentModel.CancelEventHandler(this.CbxRoleId_Validating);
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(21, 33);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(29, 13);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "User";
             // 
-            // cbxUserId
+            // Description
             // 
-            this.cbxUserId.FormattingEnabled = true;
-            this.cbxUserId.Location = new System.Drawing.Point(24, 50);
-            this.cbxUserId.Name = "cbxUserId";
-            this.cbxUserId.Size = new System.Drawing.Size(256, 21);
-            this.cbxUserId.TabIndex = 5;
-            this.cbxUserId.Validating += new System.ComponentModel.CancelEventHandler(this.CbxUserId_Validating);
+            this.Description.AutoSize = true;
+            this.Description.Location = new System.Drawing.Point(21, 84);
+            this.Description.Name = "Description";
+            this.Description.Size = new System.Drawing.Size(29, 13);
+            this.Description.TabIndex = 3;
+            this.Description.Text = "Role";
             // 
             // btnSave
             // 
@@ -81,27 +78,21 @@
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // Description
+            // cbxUserId
             // 
-            this.Description.AutoSize = true;
-            this.Description.Location = new System.Drawing.Point(21, 84);
-            this.Description.Name = "Description";
-            this.Description.Size = new System.Drawing.Size(29, 13);
-            this.Description.TabIndex = 3;
-            this.Description.Text = "Role";
+            this.cbxUserId.FormattingEnabled = true;
+            this.cbxUserId.Location = new System.Drawing.Point(24, 50);
+            this.cbxUserId.Name = "cbxUserId";
+            this.cbxUserId.Size = new System.Drawing.Size(256, 21);
+            this.cbxUserId.TabIndex = 5;
             // 
-            // label1
+            // cbxRoleId
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(21, 33);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(29, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "User";
-            // 
-            // errorProvider1
-            // 
-            this.errorProvider1.ContainerControl = this;
+            this.cbxRoleId.FormattingEnabled = true;
+            this.cbxRoleId.Location = new System.Drawing.Point(24, 100);
+            this.cbxRoleId.Name = "cbxRoleId";
+            this.cbxRoleId.Size = new System.Drawing.Size(256, 21);
+            this.cbxRoleId.TabIndex = 6;
             // 
             // frmUserRoleRequest
             // 
@@ -115,7 +106,6 @@
             this.Load += new System.EventHandler(this.frmUserRoleRequest_Load);
             this.gbxUserRoleData.ResumeLayout(false);
             this.gbxUserRoleData.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -128,6 +118,5 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cbxRoleId;
         private System.Windows.Forms.ComboBox cbxUserId;
-        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

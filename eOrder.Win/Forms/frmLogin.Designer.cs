@@ -57,7 +57,7 @@
             // btnLogin
             // 
             this.btnLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.btnLogin.Location = new System.Drawing.Point(30, 278);
+            this.btnLogin.Location = new System.Drawing.Point(30, 302);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(221, 42);
             this.btnLogin.TabIndex = 3;
@@ -80,7 +80,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.label2.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.label2.Location = new System.Drawing.Point(24, 207);
+            this.label2.Location = new System.Drawing.Point(24, 217);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(69, 17);
             this.label2.TabIndex = 5;
@@ -88,7 +88,7 @@
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(27, 228);
+            this.txtPassword.Location = new System.Drawing.Point(27, 238);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(224, 20);
@@ -97,7 +97,7 @@
             // btnRegister
             // 
             this.btnRegister.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.btnRegister.Location = new System.Drawing.Point(30, 326);
+            this.btnRegister.Location = new System.Drawing.Point(27, 372);
             this.btnRegister.Name = "btnRegister";
             this.btnRegister.Size = new System.Drawing.Size(221, 42);
             this.btnRegister.TabIndex = 7;
@@ -108,7 +108,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(285, 395);
+            this.ClientSize = new System.Drawing.Size(285, 461);
             this.Controls.Add(this.btnRegister);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.label2);

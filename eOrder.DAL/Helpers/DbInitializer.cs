@@ -3,6 +3,7 @@ using eOrder.CORE.Models;
 using eOrder.DAL.EF;
 using Microsoft.Extensions.DependencyInjection;
 using System;
+using System.IO;
 using System.Linq;
 
 namespace eOrder.DAL.Helpers
@@ -200,13 +201,17 @@ namespace eOrder.DAL.Helpers
             #endregion
 
             #region Organizations
+
+            var path = "../eOrder.DAL/StaticResources/Profile/";
+
             var organization1 = new Organization
             {
                 Name = "Blitz d.o.o.",
                 ShortName = "Blitz",
                 CurrencyId = currency1.Id,
                 OrganizationTypeId = organizationType1.Id,
-                UserId = organization.Id
+                UserId = organization.Id,
+                ProfilePhoto = System.IO.File.ReadAllBytes($"{path}1.jpg")
             };
             dbContext.Organizations.Add(organization1);
 
@@ -216,7 +221,8 @@ namespace eOrder.DAL.Helpers
                 ShortName = "Casablanca",
                 CurrencyId = currency1.Id,
                 OrganizationTypeId = organizationType1.Id,
-                UserId = organizationUser1.Id
+                UserId = organizationUser1.Id,
+                ProfilePhoto = System.IO.File.ReadAllBytes($"{path}2.jpg")
             };
             dbContext.Organizations.Add(organization2);
 
@@ -226,7 +232,8 @@ namespace eOrder.DAL.Helpers
                 ShortName = "Urban",
                 CurrencyId = currency1.Id,
                 OrganizationTypeId = organizationType2.Id,
-                UserId = organizationUser2.Id
+                UserId = organizationUser2.Id,
+                ProfilePhoto = System.IO.File.ReadAllBytes($"{path}3.jpg")
             };
             dbContext.Organizations.Add(organization3);
 
@@ -307,12 +314,16 @@ namespace eOrder.DAL.Helpers
             #endregion
 
             #region Products
+
+            path = "../eOrder.DAL/StaticResources/Food/";
+
             var product1 = new Product
             {
                 Name = "Pizza Margaritta",
                 OrganizationId = organization1.Id,
                 Price = 5.20,
-                CategoryId = category1.Id
+                CategoryId = category1.Id,
+                Photo = System.IO.File.ReadAllBytes($"{path}6.jpg")
             };
             dbContext.Products.Add(product1);
 
@@ -321,7 +332,8 @@ namespace eOrder.DAL.Helpers
                 Name = "Hamburger",
                 OrganizationId = organization1.Id,
                 Price = 3.20,
-                CategoryId = category2.Id
+                CategoryId = category2.Id,
+                Photo = System.IO.File.ReadAllBytes($"{path}3.jpg")
             };
             dbContext.Products.Add(product2);
 
@@ -330,7 +342,8 @@ namespace eOrder.DAL.Helpers
                 Name = "Cheeseburger",
                 OrganizationId = organization2.Id,
                 Price = 5.20,
-                CategoryId = category1.Id
+                CategoryId = category1.Id,
+                Photo = System.IO.File.ReadAllBytes($"{path}5.jpg")
             };
             dbContext.Products.Add(product3);
 
@@ -339,7 +352,8 @@ namespace eOrder.DAL.Helpers
                 Name = "Burek",
                 OrganizationId = organization2.Id,
                 Price = 3.20,
-                CategoryId = category2.Id
+                CategoryId = category2.Id,
+                Photo = System.IO.File.ReadAllBytes($"{path}2.jpg")
             };
             dbContext.Products.Add(product4);
 
@@ -348,7 +362,8 @@ namespace eOrder.DAL.Helpers
                 Name = "Cevapcici",
                 OrganizationId = organization3.Id,
                 Price = 5.20,
-                CategoryId = category1.Id
+                CategoryId = category1.Id,
+                Photo = System.IO.File.ReadAllBytes($"{path}4.jpg")
             };
             dbContext.Products.Add(product5);
 
@@ -357,7 +372,8 @@ namespace eOrder.DAL.Helpers
                 Name = "Africka salata",
                 OrganizationId = organization3.Id,
                 Price = 3.20,
-                CategoryId = category2.Id
+                CategoryId = category2.Id,
+                Photo = System.IO.File.ReadAllBytes($"{path}1.jpg")
             };
             dbContext.Products.Add(product6);
 

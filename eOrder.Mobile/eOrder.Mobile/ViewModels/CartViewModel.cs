@@ -1,10 +1,8 @@
 ﻿using eOrder.CORE.Constants;
 using eOrder.CORE.Requests;
-using eOrder.Mobile.Models;
 using eOrder.Mobile.Services;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
@@ -25,6 +23,13 @@ namespace eOrder.Mobile.ViewModels
             set { SetProperty(ref _additionalDescription, value); }
         }
 
+        bool _isEmpty;
+        public bool IsEmpty
+        {
+            get { return _isEmpty; }
+            set { SetProperty(ref _isEmpty, value); }
+        }
+
         public CartViewModel()
         {
             InitCommand = new Command(async () => await Init());
@@ -32,6 +37,8 @@ namespace eOrder.Mobile.ViewModels
 
         public async Task Init()
         {
+            IsEmpty = false;
+
             var orders = await _ordersService.Get<IEnumerable<OrderDTO>>(new OrderSearchRequest
             {
                 OrderStatus = OrderStatus.NotInitiated,
@@ -50,6 +57,8 @@ namespace eOrder.Mobile.ViewModels
                 var orderDetails = await _orderDetailsService.Get<IEnumerable<OrderDetailsDTO>>(new OrderDetailsSearchRequest { OrderId = order.Id, Product = new ProductDTO() });
                 CartOrders.Add(order);
             }
+
+            IsEmpty = CartOrders.Count == 0;
         }
 
         //public async Task Init()

@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.gbxCountryData = new System.Windows.Forms.GroupBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtPrimaryCurrency = new System.Windows.Forms.TextBox();
@@ -37,9 +36,7 @@
             this.txtCode = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
-            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.gbxCountryData.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // gbxCountryData
@@ -68,7 +65,7 @@
             // 
             // txtPrimaryCurrency
             // 
-            this.txtPrimaryCurrency.Location = new System.Drawing.Point(12, 158);
+            this.txtPrimaryCurrency.Location = new System.Drawing.Point(10, 158);
             this.txtPrimaryCurrency.Name = "txtPrimaryCurrency";
             this.txtPrimaryCurrency.Size = new System.Drawing.Size(211, 20);
             this.txtPrimaryCurrency.TabIndex = 5;
@@ -114,11 +111,6 @@
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(213, 20);
             this.txtName.TabIndex = 0;
-            this.txtName.Validating += new System.ComponentModel.CancelEventHandler(this.TxtName_Validating);
-            // 
-            // errorProvider1
-            // 
-            this.errorProvider1.ContainerControl = this;
             // 
             // frmCountryRequest
             // 
@@ -132,7 +124,6 @@
             this.Load += new System.EventHandler(this.frmCountryRequest_Load);
             this.gbxCountryData.ResumeLayout(false);
             this.gbxCountryData.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -147,6 +138,5 @@
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtPrimaryCurrency;
-        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

@@ -28,14 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.gbxOrganizationTypeData = new System.Windows.Forms.GroupBox();
             this.btnSave = new System.Windows.Forms.Button();
             this.txtName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.gbxOrganizationTypeData.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // gbxOrganizationTypeData
@@ -66,7 +63,6 @@
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(252, 20);
             this.txtName.TabIndex = 1;
-            this.txtName.Validating += new System.ComponentModel.CancelEventHandler(this.TxtName_Validating);
             // 
             // label1
             // 
@@ -76,10 +72,6 @@
             this.label1.Size = new System.Drawing.Size(35, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Name";
-            // 
-            // errorProvider1
-            // 
-            this.errorProvider1.ContainerControl = this;
             // 
             // frmOrganizationTypeRequest
             // 
@@ -93,7 +85,6 @@
             this.Load += new System.EventHandler(this.frmOrganizationTypeRequest_Load);
             this.gbxOrganizationTypeData.ResumeLayout(false);
             this.gbxOrganizationTypeData.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -104,6 +95,5 @@
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnSave;
-        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

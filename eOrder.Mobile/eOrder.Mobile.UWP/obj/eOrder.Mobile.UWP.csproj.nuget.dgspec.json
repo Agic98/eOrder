@@ -1,0 +1,257 @@
+{
+  "format": 1,
+  "restore": {
+    "E:\\School\\Year_III_\\Year_III_Semester_II\\RS II\\Seminarski\\eOrder\\eOrder.Mobile\\eOrder.Mobile.UWP\\eOrder.Mobile.UWP.csproj": {}
+  },
+  "projects": {
+    "E:\\School\\Year_III_\\Year_III_Semester_II\\RS II\\Seminarski\\eOrder\\eOrder.CORE\\eOrder.CORE.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\School\\Year_III_\\Year_III_Semester_II\\RS II\\Seminarski\\eOrder\\eOrder.CORE\\eOrder.CORE.csproj",
+        "projectName": "eOrder.CORE",
+        "projectPath": "E:\\School\\Year_III_\\Year_III_Semester_II\\RS II\\Seminarski\\eOrder\\eOrder.CORE\\eOrder.CORE.csproj",
+        "packagesPath": "C:\\Users\\Salih\\.nuget\\packages\\",
+        "outputPath": "E:\\School\\Year_III_\\Year_III_Semester_II\\RS II\\Seminarski\\eOrder\\eOrder.CORE\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Salih\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Users\\Public\\Documents\\Infragistics\\NuGet\\": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://nugetized.blob.core.windows.net/live-reload/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "dependencies": {
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[6.1.0, )"
+            },
+            "Microsoft.Extensions.Localization": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.3, )",
+              "autoReferenced": true
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[12.0.2, )"
+            },
+            "System.ComponentModel.Annotations": {
+              "target": "Package",
+              "version": "[4.5.0, )"
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    },
+    "E:\\School\\Year_III_\\Year_III_Semester_II\\RS II\\Seminarski\\eOrder\\eOrder.Mobile\\eOrder.Mobile.UWP\\eOrder.Mobile.UWP.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\School\\Year_III_\\Year_III_Semester_II\\RS II\\Seminarski\\eOrder\\eOrder.Mobile\\eOrder.Mobile.UWP\\eOrder.Mobile.UWP.csproj",
+        "projectName": "eOrder.Mobile.UWP",
+        "projectPath": "E:\\School\\Year_III_\\Year_III_Semester_II\\RS II\\Seminarski\\eOrder\\eOrder.Mobile\\eOrder.Mobile.UWP\\eOrder.Mobile.UWP.csproj",
+        "packagesPath": "C:\\Users\\Salih\\.nuget\\packages\\",
+        "outputPath": "E:\\School\\Year_III_\\Year_III_Semester_II\\RS II\\Seminarski\\eOrder\\eOrder.Mobile\\eOrder.Mobile.UWP\\obj\\",
+        "projectStyle": "PackageReference",
+        "skipContentFileWrite": true,
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files (x86)\\Microsoft SDKs\\UWPNuGetPackages\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Salih\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "uap10.0.16299"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Users\\Public\\Documents\\Infragistics\\NuGet\\": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://nugetized.blob.core.windows.net/live-reload/index.json": {}
+        },
+        "frameworks": {
+          "uap10.0.16299": {
+            "projectReferences": {
+              "E:\\School\\Year_III_\\Year_III_Semester_II\\RS II\\Seminarski\\eOrder\\eOrder.Mobile\\eOrder.Mobile\\eOrder.Mobile.csproj": {
+                "projectPath": "E:\\School\\Year_III_\\Year_III_Semester_II\\RS II\\Seminarski\\eOrder\\eOrder.Mobile\\eOrder.Mobile\\eOrder.Mobile.csproj"
+              }
+            }
+          }
+        }
+      },
+      "frameworks": {
+        "uap10.0.16299": {
+          "dependencies": {
+            "AdMaiora.RealXaml.Client": {
+              "target": "Package",
+              "version": "[1.0.0, )"
+            },
+            "Microsoft.NETCore.UniversalWindowsPlatform": {
+              "target": "Package",
+              "version": "[6.1.9, )"
+            },
+            "Xam.Plugin.Geolocator": {
+              "target": "Package",
+              "version": "[4.5.0.6, )"
+            },
+            "Xamarin.Essentials": {
+              "target": "Package",
+              "version": "[1.1.0, )"
+            },
+            "Xamarin.Forms": {
+              "target": "Package",
+              "version": "[4.0.0.425677, )"
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      },
+      "runtimes": {
+        "win10-arm": {
+          "#import": []
+        },
+        "win10-arm-aot": {
+          "#import": []
+        },
+        "win10-arm64-aot": {
+          "#import": []
+        },
+        "win10-x64": {
+          "#import": []
+        },
+        "win10-x64-aot": {
+          "#import": []
+        },
+        "win10-x86": {
+          "#import": []
+        },
+        "win10-x86-aot": {
+          "#import": []
+        }
+      }
+    },
+    "E:\\School\\Year_III_\\Year_III_Semester_II\\RS II\\Seminarski\\eOrder\\eOrder.Mobile\\eOrder.Mobile\\eOrder.Mobile.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\School\\Year_III_\\Year_III_Semester_II\\RS II\\Seminarski\\eOrder\\eOrder.Mobile\\eOrder.Mobile\\eOrder.Mobile.csproj",
+        "projectName": "eOrder.Mobile",
+        "projectPath": "E:\\School\\Year_III_\\Year_III_Semester_II\\RS II\\Seminarski\\eOrder\\eOrder.Mobile\\eOrder.Mobile\\eOrder.Mobile.csproj",
+        "packagesPath": "C:\\Users\\Salih\\.nuget\\packages\\",
+        "outputPath": "E:\\School\\Year_III_\\Year_III_Semester_II\\RS II\\Seminarski\\eOrder\\eOrder.Mobile\\eOrder.Mobile\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Salih\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Users\\Public\\Documents\\Infragistics\\NuGet\\": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://nugetized.blob.core.windows.net/live-reload/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "projectReferences": {
+              "E:\\School\\Year_III_\\Year_III_Semester_II\\RS II\\Seminarski\\eOrder\\eOrder.CORE\\eOrder.CORE.csproj": {
+                "projectPath": "E:\\School\\Year_III_\\Year_III_Semester_II\\RS II\\Seminarski\\eOrder\\eOrder.CORE\\eOrder.CORE.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "dependencies": {
+            "AdMaiora.RealXaml.Client": {
+              "target": "Package",
+              "version": "[1.0.0, )"
+            },
+            "Flurl": {
+              "target": "Package",
+              "version": "[2.8.2, )"
+            },
+            "Flurl.Http": {
+              "target": "Package",
+              "version": "[2.4.2, )"
+            },
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.3, )",
+              "autoReferenced": true
+            },
+            "Xam.Plugin.Geolocator": {
+              "target": "Package",
+              "version": "[4.5.0.6, )"
+            },
+            "Xamarin.Essentials": {
+              "target": "Package",
+              "version": "[1.1.0, )"
+            },
+            "Xamarin.Forms": {
+              "target": "Package",
+              "version": "[4.0.0.497661, )"
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    }
+  }
+}

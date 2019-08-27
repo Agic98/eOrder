@@ -14,6 +14,5 @@ namespace eOrder.CORE.Requests
         [Range(1, int.MaxValue, ErrorMessage = nameof(Resources.ReqField))]
         public int? CurrencyId { get; set; }
         public double TaxRate { get; set; } = 0.17;
-        public byte[] ProfilePhoto { get; set; }
     }
 }

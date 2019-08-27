@@ -55,7 +55,7 @@ namespace eOrder.Win.Forms.FormsDetails
                                        $"Phone number: {location.PhoneNumber}";
             lblPaymentType.Text = _orderDTO.PaymentType.ToString();
             cbxIsPayed.Checked = _orderDTO.IsPayed;
-            lblTotal.Text = $"Total: {_orderDTO.Total.ToString()} {_orderDTO.Currency.Name}";
+            lblTotal.Text = $"Total: {_orderDTO.TotalWithTax.ToString()} {_orderDTO.Currency.Name}";
         }
     }
 }
