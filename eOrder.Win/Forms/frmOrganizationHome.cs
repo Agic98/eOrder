@@ -163,6 +163,7 @@ namespace eOrder.Win.Forms
         private void BtnRefreshData_Click(object sender, EventArgs e)
         {
             SetData();
+            gbxOrderDetailsData.Controls.Clear();
         }
 
         private async void BtnCancel_Click(object sender, EventArgs e)
@@ -175,6 +176,7 @@ namespace eOrder.Win.Forms
                 };
                 await _orderAPIService.Update<OrderDTO>(_selectedOrderId, request);
                 SetData();
+                gbxOrderDetailsData.Controls.Clear();
             }
         }
 
@@ -188,6 +190,7 @@ namespace eOrder.Win.Forms
                 };
                 await _orderAPIService.Update<OrderDTO>(_selectedOrderId, request);
                 SetData();
+                gbxOrderDetailsData.Controls.Clear();
             }
         }
 
@@ -201,6 +204,7 @@ namespace eOrder.Win.Forms
                 };
                 await _orderAPIService.Update<OrderDTO>(_selectedOrderId, request);
                 SetData();
+                gbxOrderDetailsData.Controls.Clear();
             }
         }
 
