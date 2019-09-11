@@ -31,21 +31,28 @@
                                     <!--<Image--> 
                                     <!--Source="http://localhost:52135/api/Organization/ProfilePhoto/1" HeightRequest="150" HorizontalOptions="CenterAndExpand"></Image>-->
                                     <!--<Image Source="{Binding ProfilePhoto}" HeightRequest="150" HorizontalOptions="CenterAndExpand"></Image>-->
-                                    <Image 
-                                        HeightRequest="150" 
-                                        HorizontalOptions="CenterAndExpand">
-                                        <Image.Source>
-                                            <UriImageSource Uri="{Binding ProfilePhoto}" 
+
+                                    <Grid 
+                                        HorizontalOptions="FillAndExpand"
+                                        VerticalOptions="FillAndExpand"
+                                         >
+                                        <Image 
+                                        Aspect="AspectFit">
+                                            <Image.Source>
+                                                <UriImageSource Uri="{Binding ProfilePhoto}" 
 			                                    CacheValidity="14" 
-			                                    CachingEnabled="false"/>    
-                                        </Image.Source>
-                                    </Image>
+			                                    CachingEnabled="false"/>
+                                            </Image.Source>
+                                        </Image>
+                                    </Grid>
+
+                                    
                                     <StackLayout
                                         Padding="10">
                                         <Label 
                                             Text="{Binding Organization.ShortName}" 
                                             TextColor="LightSeaGreen"
-                                            FontSize="13" />
+                                            FontSize="20" />
                                         <Label>
                                             <Label.FormattedText>
                                                 <FormattedString>

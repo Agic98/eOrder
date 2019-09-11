@@ -22,7 +22,8 @@ namespace eOrder.Mobile.Views
                 new HomeMenuItem {Id = MenuItemType.Search, Title="Search" },
                 new HomeMenuItem {Id = MenuItemType.Cart, Title="Cart" },
                 new HomeMenuItem {Id = MenuItemType.OrdersHistory, Title="Orders history" },
-                new HomeMenuItem {Id = MenuItemType.OrdersActive, Title="Acitve orders" }
+                new HomeMenuItem {Id = MenuItemType.OrdersActive, Title="Acitve orders" },
+                new HomeMenuItem {Id = MenuItemType.Logout, Title="Log out" }
             };
 
             ListViewMenu.ItemsSource = menuItems;

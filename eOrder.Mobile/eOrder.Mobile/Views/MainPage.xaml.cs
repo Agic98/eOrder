@@ -46,6 +46,9 @@ namespace eOrder.Mobile.Views
                     case (int)MenuItemType.OrdersActive:
                         MenuPages.Add(id, new NavigationPage(new OrdersActivePage()));
                         break;
+                    case (int)MenuItemType.Logout:
+                        MenuPages.Add(id, new NavigationPage(new LoginPage()));
+                        break;
                 }
             }
 

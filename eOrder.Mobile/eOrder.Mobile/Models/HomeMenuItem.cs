@@ -11,7 +11,8 @@
         FavoritePlaces,
         FavoriteFood,
         Payments,
-        Register
+        Register,
+        Logout
     }
     public class HomeMenuItem
     {

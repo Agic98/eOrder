@@ -15179,11 +15179,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\School\\Year_III_\\Year_III_Semester_II\\RS II\\Seminarski\\eOrder\\eOrder.Mobile\\eOrder.Mobile.UWP\\eOrder.Mobile.UWP.csproj",
+      "projectUniqueName": "E:\\School\\Year_III_\\Year_III_Semester_II\\RS II\\Seminarski\\eOrder - FINAL\\eOrder.Mobile\\eOrder.Mobile.UWP\\eOrder.Mobile.UWP.csproj",
       "projectName": "eOrder.Mobile.UWP",
-      "projectPath": "E:\\School\\Year_III_\\Year_III_Semester_II\\RS II\\Seminarski\\eOrder\\eOrder.Mobile\\eOrder.Mobile.UWP\\eOrder.Mobile.UWP.csproj",
+      "projectPath": "E:\\School\\Year_III_\\Year_III_Semester_II\\RS II\\Seminarski\\eOrder - FINAL\\eOrder.Mobile\\eOrder.Mobile.UWP\\eOrder.Mobile.UWP.csproj",
       "packagesPath": "C:\\Users\\Salih\\.nuget\\packages\\",
-      "outputPath": "E:\\School\\Year_III_\\Year_III_Semester_II\\RS II\\Seminarski\\eOrder\\eOrder.Mobile\\eOrder.Mobile.UWP\\obj\\",
+      "outputPath": "E:\\School\\Year_III_\\Year_III_Semester_II\\RS II\\Seminarski\\eOrder - FINAL\\eOrder.Mobile\\eOrder.Mobile.UWP\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
@@ -15207,8 +15207,8 @@
       "frameworks": {
         "uap10.0.16299": {
           "projectReferences": {
-            "E:\\School\\Year_III_\\Year_III_Semester_II\\RS II\\Seminarski\\eOrder\\eOrder.Mobile\\eOrder.Mobile\\eOrder.Mobile.csproj": {
-              "projectPath": "E:\\School\\Year_III_\\Year_III_Semester_II\\RS II\\Seminarski\\eOrder\\eOrder.Mobile\\eOrder.Mobile\\eOrder.Mobile.csproj"
+            "E:\\School\\Year_III_\\Year_III_Semester_II\\RS II\\Seminarski\\eOrder - FINAL\\eOrder.Mobile\\eOrder.Mobile\\eOrder.Mobile.csproj": {
+              "projectPath": "E:\\School\\Year_III_\\Year_III_Semester_II\\RS II\\Seminarski\\eOrder - FINAL\\eOrder.Mobile\\eOrder.Mobile\\eOrder.Mobile.csproj"
             }
           }
         }

@@ -5,7 +5,7 @@
         public int Id { get; set; }
         public int UserId { get; set; }
         public User User { get; set; }
-        public string Name { get; set; }
+        public string Name { get; set; } 
         public string ShortName { get; set; }
         public int DeliveryTimeCalculated { get; set; }
         public int OrganizationTypeId { get; set; }

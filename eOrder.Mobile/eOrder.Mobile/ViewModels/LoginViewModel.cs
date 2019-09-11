@@ -68,6 +68,9 @@ namespace eOrder.Mobile.ViewModels
             catch (System.Exception)
             {
             }
+
+            APIService.Username = "demo.client";
+            APIService.Password = "demo";
         }
     }
 }

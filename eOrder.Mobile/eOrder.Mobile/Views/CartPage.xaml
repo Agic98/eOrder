@@ -10,8 +10,10 @@
         <vm:CartViewModel></vm:CartViewModel>
     </ContentPage.BindingContext>
     <ContentPage.Content>
-        <StackLayout
-            HorizontalOptions="CenterAndExpand">
+
+
+
+        <StackLayout Orientation="Vertical">
 
             <Label
                 HorizontalOptions="CenterAndExpand"
@@ -20,38 +22,36 @@
             </Label>
 
             <ListView 
+                HorizontalOptions="CenterAndExpand"
                 ItemsSource="{Binding CartOrders}"
-                VerticalOptions="Start"
-                HorizontalOptions="CenterAndExpand">
+                  HasUnevenRows="True"  >
                 <ListView.ItemTemplate
                     HorizontalOptions="CenterAndExpand">
                     <DataTemplate>
                         <ViewCell>
-                            <StackLayout
-                                HorizontalOptions="CenterAndExpand">
-                                <Label
-                                    HorizontalOptions="CenterAndExpand">
-                                    <Label.FormattedText>
-                                        <FormattedString>
-                                            <Span Text="Ordered from "/>
-                                            <Span FontAttributes="Bold" Text="{Binding Organization.Name}" FontSize="16" TextColor="LightSeaGreen" />
-                                            <Span Text=" :"/>
-                                        </FormattedString>
-                                    </Label.FormattedText>
-                                </Label>
-                                <StackLayout
-                                    HorizontalOptions="CenterAndExpand">
+                            <StackLayout>
+                                <StackLayout>
                                     <Label
                                     HorizontalOptions="CenterAndExpand">
                                         <Label.FormattedText>
                                             <FormattedString>
-                                                <Span Text="Total "/>
-                                                <Span FontAttributes="Bold" Text="{Binding Total}" FontSize="16" TextColor="LightSeaGreen" />
-                                                <Span Text=" :"/>
+                                                <Span Text="Ordered from "/>
+                                                <Span FontAttributes="Bold" Text="{Binding Organization.Name}" FontSize="16" TextColor="LightSeaGreen" />
                                             </FormattedString>
                                         </Label.FormattedText>
                                     </Label>
-                                    <Button
+                                    <StackLayout
+                                    HorizontalOptions="CenterAndExpand">
+                                        <Label
+                                    HorizontalOptions="CenterAndExpand">
+                                            <Label.FormattedText>
+                                                <FormattedString>
+                                                    <Span Text="Total "/>
+                                                    <Span FontAttributes="Bold" Text="{Binding Total}" FontSize="16" TextColor="LightSeaGreen" />
+                                                </FormattedString>
+                                            </Label.FormattedText>
+                                        </Label>
+                                        <Button
                                         Text="Order"
                                         HorizontalOptions="CenterAndExpand"
                                         BackgroundColor="LightSeaGreen"
@@ -59,7 +59,7 @@
                                         BindingContext="{Binding Id}"
                                         Clicked="InitiateOrder"
                                     ></Button>
-                                    <Button
+                                        <Button
                                         Text="Details"
                                         HorizontalOptions="CenterAndExpand"
                                         BackgroundColor="LightSeaGreen"
@@ -67,65 +67,16 @@
                                         BindingContext="{Binding Id}"
                                         Clicked="Details"
                                     ></Button>
-                                </StackLayout>
-                                <BoxView HeightRequest="3" BackgroundColor="LightSeaGreen" />
-                                <!--<StackLayout
-                                    HorizontalOptions="CenterAndExpand">
-                                    <ListView 
-                                        ItemsSource="{Binding OrderDetailsList}"
-                                        VerticalOptions="Start">
-                                        <ListView.ItemTemplate>
-                                            <DataTemplate>
-                                                <ViewCell>
-                                                    <StackLayout>
-                                                        <Image 
-                                                            HeightRequest="150" 
-                                                            HorizontalOptions="StartAndExpand">
-                                                            <Image.Source>
-                                                                <UriImageSource Uri="{Binding ProductPhotoUrl}" 
-			                                                        CacheValidity="14" 
-			                                                        CachingEnabled="false"/>
-                                                            </Image.Source>
-                                                        </Image>
-                                                        <Label 
-                                                            Text="{Binding OrderDetail.Product.Name}" 
-                                                            FontSize="13" />
-                                                        <Label>
-                                                            <Label.FormattedText>
-                                                                <FormattedString>
-                                                                    <Span Text="Amount: "/>
-                                                                    <Span Text="{Binding OrderDetail.Amount}" FontSize="16" TextColor="LightSeaGreen" />
-                                                                </FormattedString>
-                                                            </Label.FormattedText>
-                                                        </Label>
-                                                        <Label>
-                                                            <Label.FormattedText>
-                                                                <FormattedString>
-                                                                    <Span Text="Total: "/>
-                                                                    <Span Text="{Binding OrderDetail.Total}" FontSize="16" TextColor="LightSeaGreen" />
-                                                                </FormattedString>
-                                                            </Label.FormattedText>
-                                                        </Label>
-                                                        <Button
-                                                            Text="Edit"
-                                                            HorizontalOptions="End"
-                                                            BackgroundColor="LightSeaGreen"
-                                                            TextColor="White"
-                                                            BindingContext="{Binding OrderDetail.Id}"
-                                                            Clicked="EditFromCart">
-                                                        </Button>
-                                                    </StackLayout>
-                                                </ViewCell>
-                                            </DataTemplate>
-                                        </ListView.ItemTemplate>
-                                    </ListView>
+                                    </StackLayout>
                                     <BoxView HeightRequest="3" BackgroundColor="LightSeaGreen" />
-                                </StackLayout>-->
+                                </StackLayout>
                             </StackLayout>
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
         </StackLayout>
+
+
     </ContentPage.Content>
 </ContentPage>

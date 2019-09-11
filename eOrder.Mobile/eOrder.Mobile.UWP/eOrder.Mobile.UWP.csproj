@@ -160,7 +160,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\eOrder.Mobile\eOrder.Mobile.csproj">
-      <Project>{DBF49043-B6A8-4E8F-9DB2-9437D7C6C323}</Project>
+      <Project>{8DEB6B75-A043-47ED-AE67-01DA737EDB5A}</Project>
       <Name>eOrder.Mobile</Name>
     </ProjectReference>
   </ItemGroup>

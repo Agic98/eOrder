@@ -10,46 +10,49 @@
         <vm:OrdersViewModel></vm:OrdersViewModel>
     </ContentPage.BindingContext>
     <ContentPage.Content>
-        <StackLayout>
+        <StackLayout Orientation="Vertical">
+
             <ListView 
-                ItemsSource="{Binding Orders}"
                 HorizontalOptions="CenterAndExpand"
-                VerticalOptions="Start">
-                <ListView.ItemTemplate>
+                ItemsSource="{Binding Orders}"
+                  HasUnevenRows="True"  >
+                <ListView.ItemTemplate
+                    HorizontalOptions="CenterAndExpand">
                     <DataTemplate>
                         <ViewCell>
-                            <StackLayout
-                                HorizontalOptions="CenterAndExpand">
-                                <Label
+                            <StackLayout>
+                                <StackLayout>
+                                    <Label
                                     HorizontalOptions="CenterAndExpand">
-                                    <Label.FormattedText>
-                                        <FormattedString>
-                                            <Span Text="Ordered from "/>
-                                            <Span FontAttributes="Bold" Text="{Binding Order.Organization.Name}" FontSize="16" TextColor="LightSeaGreen" />
-                                        </FormattedString>
-                                    </Label.FormattedText>
-                                </Label>
-                                <Label
+                                        <Label.FormattedText>
+                                            <FormattedString>
+                                                <Span Text="Ordered from "/>
+                                                <Span FontAttributes="Bold" Text="{Binding Order.Organization.Name}" FontSize="16" TextColor="LightSeaGreen" />
+                                            </FormattedString>
+                                        </Label.FormattedText>
+                                    </Label>
+                                    <Label
                                     HorizontalOptions="CenterAndExpand">
-                                    <Label.FormattedText>
-                                        <FormattedString>
-                                            <Span Text="Total: "/>
-                                            <Span FontAttributes="Bold" Text="{Binding Order.Total}" FontSize="16" TextColor="LightSeaGreen" />
-                                            <Span Text=" :"/>
-                                        </FormattedString>
-                                    </Label.FormattedText>
-                                </Label>
-                                <Label
+                                        <Label.FormattedText>
+                                            <FormattedString>
+                                                <Span Text="Total: "/>
+                                                <Span FontAttributes="Bold" Text="{Binding Order.Total}" FontSize="16" TextColor="LightSeaGreen" />
+                                                <Span Text=" :"/>
+                                            </FormattedString>
+                                        </Label.FormattedText>
+                                    </Label>
+                                    <Label
                                     HorizontalOptions="CenterAndExpand">
-                                    <Label.FormattedText>
-                                        <FormattedString>
-                                            <Span Text="Created at: "/>
-                                            <Span FontAttributes="Bold" Text="{Binding Order.DateTimeCreatedDisplay}" FontSize="16" TextColor="LightSeaGreen" />
-                                            <Span Text=" :"/>
-                                        </FormattedString>
-                                    </Label.FormattedText>
-                                </Label>
-                                <BoxView HeightRequest="3" BackgroundColor="LightSeaGreen" />
+                                        <Label.FormattedText>
+                                            <FormattedString>
+                                                <Span Text="Created at: "/>
+                                                <Span FontAttributes="Bold" Text="{Binding Order.DateTimeCreatedDisplay}" FontSize="16" TextColor="LightSeaGreen" />
+                                                <Span Text=" :"/>
+                                            </FormattedString>
+                                        </Label.FormattedText>
+                                    </Label>
+                                    <BoxView HeightRequest="3" BackgroundColor="LightSeaGreen" />
+                                </StackLayout>
                             </StackLayout>
                         </ViewCell>
                     </DataTemplate>

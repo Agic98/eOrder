@@ -10,12 +10,14 @@ namespace eOrder.Mobile
 {
     public class APIService
     {
+        #region props
         public static string Username { get; set; } = "demo.client";
         public static string Password { get; set; } = "demo";
 
         private readonly string _route;
+        #endregion
 
-        #if DEBUG
+#if DEBUG
         public static string _apiUrl = "http://localhost:52135/api";
         #endif
         

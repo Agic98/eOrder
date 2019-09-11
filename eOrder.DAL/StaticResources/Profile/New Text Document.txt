@@ -1,0 +1,64 @@
+<StackLayout Orientation="Vertical">
+
+            <Label
+                HorizontalOptions="CenterAndExpand"
+                Text="There are no items!"
+                IsVisible="{Binding IsEmpty}">
+            </Label>
+
+            <ListView 
+                HorizontalOptions="CenterAndExpand"
+                ItemsSource="{Binding CartOrders}"
+                  HasUnevenRows="True"  >
+                <ListView.ItemTemplate
+                    HorizontalOptions="CenterAndExpand">
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout
+                                HorizontalOptions="CenterAndExpand">
+                            <Label
+                                    HorizontalOptions="CenterAndExpand">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="Ordered from "/>
+                                        <Span FontAttributes="Bold" Text="{Binding Organization.Name}" FontSize="16" TextColor="LightSeaGreen" />
+                                        <Span Text=" :"/>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                            <StackLayout
+                                    HorizontalOptions="CenterAndExpand">
+                                <Label
+                                    HorizontalOptions="CenterAndExpand">
+                                    <Label.FormattedText>
+                                        <FormattedString>
+                                            <Span Text="Total "/>
+                                            <Span FontAttributes="Bold" Text="{Binding Total}" FontSize="16" TextColor="LightSeaGreen" />
+                                            <Span Text=" :"/>
+                                        </FormattedString>
+                                    </Label.FormattedText>
+                                </Label>
+                                <Button
+                                        Text="Order"
+                                        HorizontalOptions="CenterAndExpand"
+                                        BackgroundColor="LightSeaGreen"
+                                        TextColor="White"
+                                        BindingContext="{Binding Id}"
+                                        Clicked="InitiateOrder"
+                                    ></Button>
+                                <Button
+                                        Text="Details"
+                                        HorizontalOptions="CenterAndExpand"
+                                        BackgroundColor="LightSeaGreen"
+                                        TextColor="White"
+                                        BindingContext="{Binding Id}"
+                                        Clicked="Details"
+                                    ></Button>
+                            </StackLayout>
+                            <BoxView HeightRequest="3" BackgroundColor="LightSeaGreen" />
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
