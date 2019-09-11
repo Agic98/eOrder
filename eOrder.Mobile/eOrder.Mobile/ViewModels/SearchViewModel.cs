@@ -11,7 +11,9 @@ namespace eOrder.Mobile.ViewModels
     public class SearchViewModel : BaseViewModel
     {
         private readonly APIService _productService = new APIService("Product");
+        private readonly APIService _categoryService = new APIService("Category");
         public ObservableCollection<ProductModel> Products { get; set; } = new ObservableCollection<ProductModel>();
+        public ObservableCollection<CategoryDTO> Categories { get; set; } = new ObservableCollection<CategoryDTO>();
 
         public ICommand InitCommand { get; set; }
 
@@ -26,6 +28,13 @@ namespace eOrder.Mobile.ViewModels
         {
             get { return _productName; }
             set { SetProperty(ref _productName, value); }
+        }
+
+        int _categoryId;
+        public int CategoryId
+        {
+            get { return _categoryId; }
+            set { SetProperty(ref _categoryId, value); }
         }
 
         double _priceFrom;
@@ -44,7 +53,7 @@ namespace eOrder.Mobile.ViewModels
 
         public async Task Init()
         {
-            var data = await _productService.Get<IEnumerable<ProductDTO>>(new ProductSearchRequest { Name = ProductName, PriceFrom = PriceFrom, PriceTo = PriceTo });
+            var data = await _productService.Get<IEnumerable<ProductDTO>>(new ProductSearchRequest { Name = ProductName, PriceFrom = PriceFrom, PriceTo = PriceTo, CategoryId = CategoryId });
 
             Products.Clear();
             foreach (var item in data)
@@ -54,6 +63,13 @@ namespace eOrder.Mobile.ViewModels
                     Product = item,
                     PhotoUrl = $"{APIService._apiUrl}/Product/Photo/{item.Id}"
                 });
+            }
+
+            var categories = await _categoryService.Get<IEnumerable<CategoryDTO>>(null);
+            Categories.Clear();
+            foreach (var item in categories)
+            {
+                Categories.Add(item);
             }
         }
     }

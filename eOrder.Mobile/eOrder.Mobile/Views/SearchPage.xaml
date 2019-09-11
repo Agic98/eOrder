@@ -24,6 +24,28 @@
                 HorizontalOptions="StartAndExpand" />
                 <Entry Text="{Binding ProductName}"></Entry>
 
+                <!--<StackLayout Padding="10">
+                    <Picker x:Name="categoryPicker" Title="Choose category" SelectedIndexChanged="categoryPicker_SelectedIndexChanges"></Picker>
+
+                    <ListView x:Name="Categories">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                        </Grid.ColumnDefinitions>
+
+                                        <StackLayout Grid.Column="1" Padding="10">
+                                            <Label Text="{Binding Name}" FontAttributes="Bold"></Label>
+                                        </StackLayout>
+                                    </Grid>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackLayout>-->
+
                 <AbsoluteLayout>
                     <Grid AbsoluteLayout.LayoutBounds="0,1,1,1" AbsoluteLayout.LayoutFlags="All">
                         <Grid.RowDefinitions>

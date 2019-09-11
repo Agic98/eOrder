@@ -65,7 +65,7 @@ namespace eOrder.Mobile.ViewModels
                     await Application.Current.MainPage.DisplayAlert("Error", "You are not authenticated as a client or delivery person", "OK");
                 }
             }
-            catch (System.Exception)
+            catch (System.Exception e)
             {
             }
 
