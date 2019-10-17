@@ -16,5 +16,6 @@ namespace eOrder.CORE.Requests
         [Required(ErrorMessage = nameof(Resources.ReqField))]
         public PaymentType PaymentType { get; set; }
         public double Total { get; set; }
+        public bool OrderAll { get; set; }
     }
 }

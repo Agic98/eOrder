@@ -24,17 +24,21 @@ namespace eOrder.API.Controllers
         private ICurrencyService _currencyService;
         private ILocationService _locationService;
         private IOrganizationService _organizationService;
+        private IOrderClientService _orderClientService;
 
         public OrderClientController(
             IOrderClientService OrderService,
             ICurrencyService currencyService,
             ILocationService locationService,
-            IOrganizationService organizationService) :
+            IOrganizationService organizationService,
+            IOrderClientService ordersService
+            ) :
             base(OrderService)
         {
             _currencyService = currencyService;
             _locationService = locationService;
             _organizationService = organizationService;
+            _orderClientService = ordersService;
         }
 
         public override IEnumerable<OrderDTO> Get([FromQuery] OrderSearchRequest searchObject = null, [FromQuery] Pagination pagination = null)

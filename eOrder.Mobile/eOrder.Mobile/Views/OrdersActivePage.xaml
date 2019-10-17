@@ -12,7 +12,9 @@
     <ContentPage.Content>
             <StackLayout Orientation="Vertical">
 
-                <ListView 
+            
+
+            <ListView 
                 HorizontalOptions="CenterAndExpand"
                 ItemsSource="{Binding Orders}"
                   HasUnevenRows="True"  >

@@ -11,10 +11,16 @@
     </ContentPage.BindingContext>
     <ContentPage.Content>
 
-
+        
 
         <StackLayout Orientation="Vertical">
-
+            <Button
+                                        Text="Details"
+                                        HorizontalOptions="CenterAndExpand"
+                                        BackgroundColor="LightSeaGreen"
+                                        TextColor="White"
+                                        Clicked="InitiateOrders"
+                                    ></Button>
             <Label
                 HorizontalOptions="CenterAndExpand"
                 Text="There are no items!"

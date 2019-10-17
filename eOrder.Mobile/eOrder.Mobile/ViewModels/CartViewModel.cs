@@ -27,7 +27,7 @@ namespace eOrder.Mobile.ViewModels
         public bool IsEmpty
         {
             get { return _isEmpty; }
-            set { SetProperty(ref _isEmpty, value); }
+            set { SetProperty(ref _isEmpty, value); }  
         }
 
         public CartViewModel()
@@ -109,11 +109,17 @@ namespace eOrder.Mobile.ViewModels
 
                 await Application.Current.MainPage.DisplayAlert("Success", "Successfully created order.", "OK");
 
-                await Init();
                 return;
             }
 
             await Application.Current.MainPage.DisplayAlert("Error", "There was an error while creating the order, please try again.", "OK");
+        }
+
+        public async Task InitiateOrders()
+        {
+            foreach (var item in CartOrders)
+                await InitiateOrder(item.Id);
+            await Init();
         }
     }
 

@@ -55,5 +55,10 @@ namespace eOrder.Mobile.ViewModels
                 });
             }
         }
+
+        public void OrderAll()
+        {
+
+        }
     }
 }

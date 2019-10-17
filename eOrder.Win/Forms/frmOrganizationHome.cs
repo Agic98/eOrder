@@ -184,9 +184,12 @@ namespace eOrder.Win.Forms
         {
             if (_selectedOrderId != 0)
             {
+                var order = (await _orderAPIService.Get<IEnumerable<OrderDTO>>(new OrderSearchRequest() { Id = _selectedOrderId }))?.FirstOrDefault();
+                var orderStatus = order?.OrderStatus == OrderStatus.Processing ? OrderStatus.Completed : OrderStatus.Processing;
+
                 var request = new OrderRequestOrganization
                 {
-                    OrderStatus = OrderStatus.Processing
+                    OrderStatus = orderStatus
                 };
                 await _orderAPIService.Update<OrderDTO>(_selectedOrderId, request);
                 SetData();

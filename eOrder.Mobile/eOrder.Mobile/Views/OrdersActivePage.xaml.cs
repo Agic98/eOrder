@@ -1,4 +1,5 @@
 ﻿using eOrder.CORE.Constants;
+using eOrder.Mobile.Services;
 using eOrder.Mobile.ViewModels;
 using System;
 using Xamarin.Forms;

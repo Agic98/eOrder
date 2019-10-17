@@ -1,4 +1,5 @@
-﻿using eOrder.Mobile.ViewModels;
+﻿using eOrder.Mobile.Services;
+using eOrder.Mobile.ViewModels;
 using System;
 using System.Linq;
 using Xamarin.Forms;
@@ -26,6 +27,11 @@ namespace eOrder.Mobile.Views
         {
             var orderId = (int)((Button)sender).BindingContext;
             await model.InitiateOrder(orderId);
+        }
+
+        async void InitiateOrders(object sender, EventArgs e)
+        {
+            await model.InitiateOrders();
         }
 
         private async void EditFromCart(object sender, EventArgs e)
